@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm08_-_Valley_Area.ogg-f3151ea7dc6825f8e377e96ccb0451e8.oggstr"
+
+[deps]
+
+source_file="res://music/bgm08_-_Valley_Area.ogg"
+dest_files=[ "res://.import/bgm08_-_Valley_Area.ogg-f3151ea7dc6825f8e377e96ccb0451e8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm04_-_Tutorial.ogg-cd050e5390d3db1eb2a073c8b467af43.oggstr"
+
+[deps]
+
+source_file="res://music/bgm04_-_Tutorial.ogg"
+dest_files=[ "res://.import/bgm04_-_Tutorial.ogg-cd050e5390d3db1eb2a073c8b467af43.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm13_-_Spring_Theme.ogg-38600eea177b75630cc14b4eb4b8a634.oggstr"
+
+[deps]
+
+source_file="res://music/bgm13_-_Spring_Theme.ogg"
+dest_files=[ "res://.import/bgm13_-_Spring_Theme.ogg-38600eea177b75630cc14b4eb4b8a634.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

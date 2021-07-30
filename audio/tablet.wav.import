@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tablet.wav-4b6a7c58e08e9e82859424ae840e9440.sample"
+
+[deps]
+
+source_file="res://audio/tablet.wav"
+dest_files=[ "res://.import/tablet.wav-4b6a7c58e08e9e82859424ae840e9440.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

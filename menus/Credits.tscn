@@ -1,0 +1,177 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://menus/Credits.gd" type="Script" id=1]
+[ext_resource path="res://environment/backgrounds/ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sound/music/Title Screen.ogg" type="AudioStream" id=3]
+[ext_resource path="res://font/Daemon Full Working (1).ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://graphics/gui/file_select_cursor.png" type="Texture" id=5]
+[ext_resource path="res://interfaces/theme/button/pressed.stylebox.tres" type="StyleBox" id=7]
+[ext_resource path="res://interfaces/theme/button/focus.stylebox.tres" type="StyleBox" id=8]
+[ext_resource path="res://interfaces/theme/button/normal.stylebox.tres" type="StyleBox" id=9]
+[ext_resource path="res://interfaces/theme/fonts/menu.dynamicfont.tres" type="DynamicFont" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+outline_size = 1
+outline_color = Color( 0.32549, 0, 0.470588, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "roll"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 160 ), Vector2( 0, -248 ), Vector2( 0, -248 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+anti_aliasing = false
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="TextureRect" parent="Background/CloudsBack" index="0"]
+expand = false
+
+[node name="CloudFront" parent="Background" index="1"]
+visible = false
+position = Vector2( 820, 203 )
+
+[node name="TextureRect3" parent="Background/CloudFront" index="0"]
+expand = false
+
+[node name="BGBack" parent="Background" index="2"]
+position = Vector2( 769.796, 150 )
+
+[node name="TextureRect3" parent="Background/Node2D2" index="1"]
+margin_left = -1.0
+margin_top = 9.4375
+margin_right = 254.0
+margin_bottom = -104.063
+
+[node name="TextureRect2" parent="Background/Node2D2" index="2"]
+margin_left = 0.0
+margin_top = 3.0
+margin_right = 260.0
+margin_bottom = -27.5
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -117.0
+margin_top = -60.0
+margin_right = 155.0
+margin_bottom = 427.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+margin_right = 272.0
+margin_bottom = 487.0
+rect_clip_content = false
+custom_fonts/bold_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[b][color=#ffffff]Contributors:[/color][/b]
+[color=#ffe000]
+[Music][/color]
+taellinglin
+
+[color=#ffe000][Programming][/color]
+Foopod
+Geist
+taellinglin
+
+[color=#ffe000][Animation][/color]
+Yummyglitzer
+
+[color=#ffe000][Artwork][/color]
+Ninja_cat
+taellinglin
+"
+meta_underlined = false
+text = "Contributors:
+
+[Music]
+taellinglin
+
+[Programming]
+Foopod
+Geist
+taellinglin
+
+[Animation]
+Yummyglitzer
+
+[Artwork]
+Ninja_cat
+taellinglin
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer"]
+autoplay = "roll"
+anims/roll = SubResource( 5 )
+
+[node name="file_select_cursor" type="Sprite" parent="PanelContainer"]
+position = Vector2( 144.796, 120 )
+texture = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 177.0
+margin_top = 134.0
+margin_right = 228.0
+margin_bottom = 158.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Return"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[editable path="Background"]

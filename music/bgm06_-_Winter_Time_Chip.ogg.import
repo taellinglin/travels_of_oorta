@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm06_-_Winter_Time_Chip.ogg-9ce55759af535d5d8407ded2f266748a.oggstr"
+
+[deps]
+
+source_file="res://music/bgm06_-_Winter_Time_Chip.ogg"
+dest_files=[ "res://.import/bgm06_-_Winter_Time_Chip.ogg-9ce55759af535d5d8407ded2f266748a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

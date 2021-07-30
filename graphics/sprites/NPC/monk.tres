@@ -1,0 +1,6 @@
+[gd_resource type="StreamTexture" format=2]
+
+[resource]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/irishdress.png-66ba4eb036149442dbe510773d2bdb6b.stex"

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/oorta_die.wav-ad4d2064419f47ecb27b5a2dde0ee623.sample"
+
+[deps]
+
+source_file="res://audio/oorta_die.wav"
+dest_files=[ "res://.import/oorta_die.wav-ad4d2064419f47ecb27b5a2dde0ee623.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

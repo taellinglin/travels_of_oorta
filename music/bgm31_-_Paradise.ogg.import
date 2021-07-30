@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm31_-_Paradise.ogg-68d64a4e08e63b8e3c80278a29f9673e.oggstr"
+
+[deps]
+
+source_file="res://music/bgm31_-_Paradise.ogg"
+dest_files=[ "res://.import/bgm31_-_Paradise.ogg-68d64a4e08e63b8e3c80278a29f9673e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

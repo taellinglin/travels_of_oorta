@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm21_-_Train_Track_Beat.ogg-fb67327de21c9d4634f2de7f215e696b.oggstr"
+
+[deps]
+
+source_file="res://music/bgm21_-_Train_Track_Beat.ogg"
+dest_files=[ "res://.import/bgm21_-_Train_Track_Beat.ogg-fb67327de21c9d4634f2de7f215e696b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

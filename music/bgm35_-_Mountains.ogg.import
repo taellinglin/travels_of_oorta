@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm35_-_Mountains.ogg-01af8130f912d460d25faf06fbd12c12.oggstr"
+
+[deps]
+
+source_file="res://music/bgm35_-_Mountains.ogg"
+dest_files=[ "res://.import/bgm35_-_Mountains.ogg-01af8130f912d460d25faf06fbd12c12.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

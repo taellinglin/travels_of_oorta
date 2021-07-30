@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm12_-_Spring_Town.ogg-c0e80123d5506745131911d803812e5e.oggstr"
+
+[deps]
+
+source_file="res://music/bgm12_-_Spring_Town.ogg"
+dest_files=[ "res://.import/bgm12_-_Spring_Town.ogg-c0e80123d5506745131911d803812e5e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm22_-_Temple_Basement.ogg-2038848a5491d1d67ba3308047aca1f6.oggstr"
+
+[deps]
+
+source_file="res://music/bgm22_-_Temple_Basement.ogg"
+dest_files=[ "res://.import/bgm22_-_Temple_Basement.ogg-2038848a5491d1d67ba3308047aca1f6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

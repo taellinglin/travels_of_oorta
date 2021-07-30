@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spin_down.wav-ac3d72f33ffee95f2e7758c4b3fb7988.sample"
+
+[deps]
+
+source_file="res://sound/menus/spin_down.wav"
+dest_files=[ "res://.import/spin_down.wav-ac3d72f33ffee95f2e7758c4b3fb7988.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

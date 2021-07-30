@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spin_up.wav-dc71a7e1c6374813230e6327d21c9fb5.sample"
+
+[deps]
+
+source_file="res://sound/menus/spin_up.wav"
+dest_files=[ "res://.import/spin_up.wav-dc71a7e1c6374813230e6327d21c9fb5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

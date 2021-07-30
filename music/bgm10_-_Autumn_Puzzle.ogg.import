@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm10_-_Autumn_Puzzle.ogg-a5d9ddd09bb22e58405202684e704480.oggstr"
+
+[deps]
+
+source_file="res://music/bgm10_-_Autumn_Puzzle.ogg"
+dest_files=[ "res://.import/bgm10_-_Autumn_Puzzle.ogg-a5d9ddd09bb22e58405202684e704480.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

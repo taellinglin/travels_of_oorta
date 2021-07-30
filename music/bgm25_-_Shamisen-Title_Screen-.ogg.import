@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm25_-_Shamisen-Title_Screen-.ogg-e054a15995eb3ab6052b251fc170c268.oggstr"
+
+[deps]
+
+source_file="res://music/bgm25_-_Shamisen-Title_Screen-.ogg"
+dest_files=[ "res://.import/bgm25_-_Shamisen-Title_Screen-.ogg-e054a15995eb3ab6052b251fc170c268.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

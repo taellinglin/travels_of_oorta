@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm09_-_Summer.ogg-6b1e560ccafd38904dfbd49de366ed3c.oggstr"
+
+[deps]
+
+source_file="res://music/bgm09_-_Summer.ogg"
+dest_files=[ "res://.import/bgm09_-_Summer.ogg-6b1e560ccafd38904dfbd49de366ed3c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,152 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://interfaces/loading/LoadingScreen.gd" type="Script" id=1]
+[ext_resource path="res://font/Daemon Full Working (1).ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://music/bgm29_-_Item_in_Room.ogg" type="AudioStream" id=3]
+[ext_resource path="res://interfaces/theme/fonts/menu.dynamicfont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://interfaces/loading/texture.png" type="Texture" id=5]
+[ext_resource path="res://graphics/backgrounds/title_bg.png" type="Texture" id=6]
+[ext_resource path="res://graphics/backgrounds/bg_fg.png" type="Texture" id=7]
+[ext_resource path="res://graphics/backgrounds/trees2.png" type="Texture" id=8]
+[ext_resource path="res://shaders/scroll.shader" type="Shader" id=9]
+
+[sub_resource type="Animation" id=4]
+resource_name = "Blink"
+length = 1.4
+loop = true
+step = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Backdrop/VBoxContainer/PressStartLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 9 )
+shader_param/scroll_speed = 0.002
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 9 )
+shader_param/scroll_speed = -0.025
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 9 )
+shader_param/scroll_speed = 0.05
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[node name="LoadingScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Blink = SubResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_top = 0.006
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = 0.04
+margin_right = 36.0
+margin_bottom = 105.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backdrop" type="Node" parent="CenterContainer"]
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Backdrop"]
+material = SubResource( 1 )
+margin_left = -2.0
+margin_top = 5.0
+margin_right = 254.0
+margin_bottom = 261.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 6 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="CenterContainer/Backdrop"]
+material = SubResource( 2 )
+margin_left = 6.0
+margin_top = 53.0
+margin_right = 246.0
+margin_bottom = 213.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer/Backdrop"]
+material = SubResource( 3 )
+margin_left = -2.0
+margin_top = 5.0
+margin_right = 254.0
+margin_bottom = 261.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Backdrop"]
+margin_left = -24.0
+margin_top = 109.0
+margin_right = 276.0
+margin_bottom = 157.0
+
+[node name="Label" type="Label" parent="CenterContainer/Backdrop/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 4 )
+text = "Loading"
+align = 1
+
+[node name="ProgressBar" type="TextureProgress" parent="CenterContainer/Backdrop/VBoxContainer"]
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 300, 8 )
+texture_progress = ExtResource( 5 )
+
+[node name="PressStartLabel" type="Label" parent="CenterContainer/Backdrop/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0.863572 )
+self_modulate = Color( 0.439216, 0.360784, 0.662745, 1 )
+margin_top = 32.0
+margin_right = 300.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 300, 16 )
+custom_fonts/font = SubResource( 5 )
+text = "Press Start"
+align = 1
+
+[node name="Tween" type="Tween" parent="CenterContainer/Backdrop/VBoxContainer"]
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

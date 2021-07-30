@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/eek.wav-a3f287adfcac64cbc9f4bd74c35bbad5.sample"
+
+[deps]
+
+source_file="res://audio/eek.wav"
+dest_files=[ "res://.import/eek.wav-a3f287adfcac64cbc9f4bd74c35bbad5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

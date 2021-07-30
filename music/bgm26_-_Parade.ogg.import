@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm26_-_Parade.ogg-a4412bdb14a5bdabcae169fcc5720f24.oggstr"
+
+[deps]
+
+source_file="res://music/bgm26_-_Parade.ogg"
+dest_files=[ "res://.import/bgm26_-_Parade.ogg-a4412bdb14a5bdabcae169fcc5720f24.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

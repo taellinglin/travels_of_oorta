@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Travels of Oorta - Autumn Puzzle.ogg-6100603c2815e2a32c44048cd5432107.oggstr"
+
+[deps]
+
+source_file="res://sound/music/Travels of Oorta - Autumn Puzzle.ogg"
+dest_files=[ "res://.import/Travels of Oorta - Autumn Puzzle.ogg-6100603c2815e2a32c44048cd5432107.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

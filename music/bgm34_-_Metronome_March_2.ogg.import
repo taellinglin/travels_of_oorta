@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm34_-_Metronome_March_2.ogg-fd264f6ffebe993178f65d6798a160b9.oggstr"
+
+[deps]
+
+source_file="res://music/bgm34_-_Metronome_March_2.ogg"
+dest_files=[ "res://.import/bgm34_-_Metronome_March_2.ogg-fd264f6ffebe993178f65d6798a160b9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm11_-_Spring_Stage.ogg-3181bbdfd47c1ed905b5b53086b1f3bb.oggstr"
+
+[deps]
+
+source_file="res://music/bgm11_-_Spring_Stage.ogg"
+dest_files=[ "res://.import/bgm11_-_Spring_Stage.ogg-3181bbdfd47c1ed905b5b53086b1f3bb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

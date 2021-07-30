@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm36_-_Sudden_Attack.ogg-79da0be2a0116640f79b55a9031eb648.oggstr"
+
+[deps]
+
+source_file="res://music/bgm36_-_Sudden_Attack.ogg"
+dest_files=[ "res://.import/bgm36_-_Sudden_Attack.ogg-79da0be2a0116640f79b55a9031eb648.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

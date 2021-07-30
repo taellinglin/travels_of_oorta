@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm39_-_Wind-Up_Toy-Extended-.ogg-16ff0baf8056e95fec1fd124340466ce.oggstr"
+
+[deps]
+
+source_file="res://music/bgm39_-_Wind-Up_Toy-Extended-.ogg"
+dest_files=[ "res://.import/bgm39_-_Wind-Up_Toy-Extended-.ogg-16ff0baf8056e95fec1fd124340466ce.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

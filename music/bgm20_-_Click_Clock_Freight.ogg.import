@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm20_-_Click_Clock_Freight.ogg-46dc7d42098cf94600364f2a0086c48e.oggstr"
+
+[deps]
+
+source_file="res://music/bgm20_-_Click_Clock_Freight.ogg"
+dest_files=[ "res://.import/bgm20_-_Click_Clock_Freight.ogg-46dc7d42098cf94600364f2a0086c48e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

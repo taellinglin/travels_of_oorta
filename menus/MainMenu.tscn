@@ -1,0 +1,181 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://menus/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://shaders/scroll.shader" type="Shader" id=2]
+[ext_resource path="res://levels/CenterContainer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://graphics/backgrounds/title_bg.png" type="Texture" id=4]
+[ext_resource path="res://graphics/backgrounds/trees2.png" type="Texture" id=5]
+[ext_resource path="res://graphics/backgrounds/bg_fg.png" type="Texture" id=6]
+[ext_resource path="res://music/bgm01_-_Menu.ogg" type="AudioStream" id=7]
+[ext_resource path="res://graphics/gui/file_select_cursor.png" type="Texture" id=8]
+[ext_resource path="res://interfaces/dialogue/MainMenu.gd" type="Script" id=9]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/scroll_speed = 0.0
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 2 )
+shader_param/scroll_speed = 0.0
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 2 )
+shader_param/scroll_speed = 0.0
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 2 )
+shader_param/scroll_speed = 0.002
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 2 )
+shader_param/scroll_speed = -0.025
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 2 )
+shader_param/scroll_speed = 0.05
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_path = "Level1"
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="CloudsBack" type="ParallaxLayer" parent="Background"]
+position = Vector2( 775.796, 127.943 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/CloudsBack"]
+material = SubResource( 1 )
+anchor_right = 2.5
+anchor_bottom = 1.875
+margin_left = -776.0
+margin_top = -128.0
+margin_right = -491.0
+margin_bottom = 26.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloudFront" type="ParallaxLayer" parent="Background"]
+visible = false
+position = Vector2( 820, 203 )
+motion_scale = Vector2( 0.9, 0.9 )
+
+[node name="TextureRect3" type="TextureRect" parent="Background/CloudFront"]
+material = SubResource( 2 )
+anchor_top = -0.003125
+anchor_right = 2.5
+anchor_bottom = 1.87188
+margin_left = -763.0
+margin_top = -162.0
+margin_right = 248.0
+margin_bottom = -7.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGBack" type="ParallaxLayer" parent="Background"]
+position = Vector2( 769.796, 150 )
+motion_scale = Vector2( 0.8, 0.9 )
+
+[node name="TextureRect2" type="TextureRect" parent="Background/BGBack"]
+visible = false
+material = SubResource( 3 )
+anchor_right = 2.5
+anchor_bottom = 1.875
+margin_left = -768.0
+margin_top = -180.0
+margin_right = -497.0
+margin_bottom = -1.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGFront" type="ParallaxLayer" parent="Background"]
+position = Vector2( 771.564, 132.958 )
+motion_scale = Vector2( 0.9, 0.9 )
+
+[node name="Node2D2" type="Node" parent="Background"]
+
+[node name="TextureRect" type="TextureRect" parent="Background/Node2D2"]
+material = SubResource( 4 )
+anchor_right = 2.5
+anchor_bottom = 1.875
+margin_right = 259.0
+margin_bottom = -115.5
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="Background/Node2D2"]
+material = SubResource( 5 )
+anchor_top = -0.003125
+anchor_right = 2.5
+anchor_bottom = 1.87188
+margin_left = 1.0
+margin_top = 1.4375
+margin_right = 256.0
+margin_bottom = -112.063
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Background/Node2D2"]
+material = SubResource( 6 )
+anchor_right = 2.5
+anchor_bottom = 1.875
+margin_left = -1.0
+margin_right = 259.0
+margin_bottom = -95.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" parent="." instance=ExtResource( 3 )]
+margin_left = -3.0
+margin_top = -1.0
+margin_right = -3.0
+margin_bottom = -1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="CursorIcon" type="Sprite" parent="."]
+position = Vector2( 70, 53 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )

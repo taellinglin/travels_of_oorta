@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm38_-_Trails.ogg-07d183f3738685d041fb9dae07f91f90.oggstr"
+
+[deps]
+
+source_file="res://music/bgm38_-_Trails.ogg"
+dest_files=[ "res://.import/bgm38_-_Trails.ogg-07d183f3738685d041fb9dae07f91f90.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

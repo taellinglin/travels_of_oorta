@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm37_-_Town.ogg-48a5667ab7cfdaddd53a3708696ab024.oggstr"
+
+[deps]
+
+source_file="res://music/bgm37_-_Town.ogg"
+dest_files=[ "res://.import/bgm37_-_Town.ogg-48a5667ab7cfdaddd53a3708696ab024.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

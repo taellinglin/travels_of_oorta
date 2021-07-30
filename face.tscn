@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/SMRT/faces/dialog.tres" type="SpriteFrames" id=1]
+
+[node name="face" type="AnimatedSprite"]
+position = Vector2( 32, 34 )
+frames = ExtResource( 1 )
