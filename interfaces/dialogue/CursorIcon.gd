@@ -17,22 +17,12 @@ func _ready():
 func _process(delta):
 	offset.y = 56*(Sfx.cursori);
 	
-	match Sfx.cursori:
-		0:
-			get_parent().get_node("PanelContainer1/RichTextLabel")
-		
-		1:
-			LevelManager.goto_scene("res://scenes/Level1.tscn")
-		
-		2:
-			LevelManager.goto_scene("res://scenes/Level2.tscn")
-
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		file_select = Sfx.cursori;
 		match file_select:
 			0:
-				LevelManager.goto_scene("res://scenes/Template.tscn")
+				LevelManager.goto_scene("res://scenes/Level0.tscn")
 			
 			1:
 				LevelManager.goto_scene("res://scenes/Level1.tscn")

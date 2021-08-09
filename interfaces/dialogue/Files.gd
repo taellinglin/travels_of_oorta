@@ -17,7 +17,6 @@ func _ready() -> void:
 	Sfx.menumode = true;
 	Sfx.maxitems = 2;
 	
-	
 
 func start(body) -> void:
 	host = body

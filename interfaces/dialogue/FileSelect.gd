@@ -19,8 +19,7 @@ func _process(delta):
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		file_select = Sfx.cursori;
-		match file_select:
+		match Sfx.cursori:
 			0:
 				LevelManager.goto_scene("res://scenes/Level0.tscn")
 			

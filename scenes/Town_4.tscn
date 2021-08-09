@@ -1,0 +1,117 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://managers/GameManager.gd" type="Script" id=1]
+[ext_resource path="res://menus/GameOver.tscn" type="PackedScene" id=2]
+[ext_resource path="res://menus/Pause.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tools/draw-bounds.gd" type="Script" id=4]
+[ext_resource path="res://music/bgm10_-_Autumn_Puzzle.ogg" type="AudioStream" id=5]
+[ext_resource path="res://environment/backgrounds/ParallaxBackground.tscn" type="PackedScene" id=6]
+[ext_resource path="res://environment/tilemaps/TilemapBackground.tscn" type="PackedScene" id=7]
+[ext_resource path="res://environment/tilemaps/TilemapBridge.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Town4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://environment/tilemaps/TilemapForest.tscn" type="PackedScene" id=10]
+[ext_resource path="res://environment/tilemaps/TilemapHerb.tscn" type="PackedScene" id=11]
+[ext_resource path="res://environment/props/House.tscn" type="PackedScene" id=12]
+[ext_resource path="res://characters/enemies/dummy/Dummy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://characters/enemies/slime/Slime.tscn" type="PackedScene" id=14]
+[ext_resource path="res://characters/enemies/eagle/Eagle.tscn" type="PackedScene" id=15]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=16]
+[ext_resource path="res://characters/player/gui/PlayerLifeBar.tscn" type="PackedScene" id=17]
+
+[node name="Game" type="Node2D"]
+position = Vector2( 930.242, 636.341 )
+script = ExtResource( 1 )
+
+[node name="Interfaces" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="GameOver" parent="Interfaces" instance=ExtResource( 2 )]
+visible = false
+
+[node name="Pause" parent="Interfaces" instance=ExtResource( 3 )]
+visible = false
+
+[node name="Bounds" type="Node2D" parent="."]
+scale = Vector2( 1, 12.36 )
+script = ExtResource( 4 )
+color = Color( 0.756863, 0.376471, 0.85098, 1 )
+value = null
+
+[node name="Min" type="Position2D" parent="Bounds"]
+position = Vector2( -930.411, -27.7881 )
+
+[node name="Max" type="Position2D" parent="Bounds"]
+position = Vector2( 120.758, -103.183 )
+
+[node name="Ambiance" type="Node2D" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="Ambiance"]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Environment" type="Node2D" parent="World"]
+
+[node name="Background" parent="World/Environment" instance=ExtResource( 6 )]
+
+[node name="TilemapBackground" parent="World/Environment" instance=ExtResource( 7 )]
+
+[node name="TilemapBridge" parent="World/Environment" instance=ExtResource( 8 )]
+
+[node name="Node2D" parent="World/Environment" instance=ExtResource( 9 )]
+position = Vector2( -576.999, -231.931 )
+
+[node name="TilemapForest" parent="World/Environment" instance=ExtResource( 10 )]
+tile_data = PoolIntArray( -1638449, 1, 0, -1638448, 1, 0, -1638446, 1, 0, -1638419, 27, 0, -1572911, 2, 0, -1572895, 28, 0, -1572894, 28, 0, -1572893, 28, 0, -1572892, 28, 0, -1572891, 28, 0, -1572890, 28, 0, -1572889, 28, 0, -1572888, 28, 0, -1572887, 28, 0, -1572886, 28, 0, -1572885, 28, 0, -1572884, 28, 0 )
+
+[node name="TilemapHerb" parent="World/Environment" instance=ExtResource( 11 )]
+
+[node name="Props" type="Node2D" parent="World"]
+
+[node name="House" parent="World/Props" instance=ExtResource( 12 )]
+position = Vector2( -70.242, -915.341 )
+
+[node name="Enemies" type="Node2D" parent="World"]
+position = Vector2( 280.515, -225.456 )
+
+[node name="Dummy" parent="World/Enemies" instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -481.242, -440.341 )
+z_index = 0
+
+[node name="Slime" parent="World/Enemies" instance=ExtResource( 14 )]
+position = Vector2( -543.242, -417.341 )
+
+[node name="Slime2" parent="World/Enemies" instance=ExtResource( 14 )]
+position = Vector2( -1007.24, -802.341 )
+
+[node name="Slime3" parent="World/Enemies" instance=ExtResource( 14 )]
+position = Vector2( -739.242, -758.341 )
+
+[node name="Eagle" parent="World/Enemies" instance=ExtResource( 15 )]
+position = Vector2( -1000.24, -513.341 )
+patrol_distance = 100.0
+
+[node name="Eagle2" parent="World/Enemies" instance=ExtResource( 15 )]
+position = Vector2( -425.242, -417.341 )
+patrol_distance = 100.0
+
+[node name="Eagle3" parent="World/Enemies" instance=ExtResource( 15 )]
+position = Vector2( -870.242, -752.341 )
+patrol_distance = 100.0
+
+[node name="Player" parent="World" instance=ExtResource( 16 )]
+position = Vector2( -783.923, -423.866 )
+
+[node name="Camera" type="Camera2D" parent="World/Player"]
+current = true
+zoom = Vector2( 0.9, 0.9 )
+limit_left = 0
+limit_top = 30
+limit_right = 1750
+limit_bottom = 270
+
+[node name="HUD" type="CanvasLayer" parent="World/Player"]
+
+[node name="PlayerLifeBar" parent="World/Player/HUD" instance=ExtResource( 17 )]

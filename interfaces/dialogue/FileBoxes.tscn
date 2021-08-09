@@ -27,7 +27,7 @@ shader_param/scroll_speed = -0.025
 shader = ExtResource( 11 )
 shader_param/scroll_speed = 0.05
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 size = 10
 outline_size = 1
 outline_color = Color( 0.121569, 0, 0.137255, 1 )
@@ -104,7 +104,7 @@ margin_right = 223.0
 margin_bottom = 31.0
 rect_clip_content = false
 custom_fonts/bold_font = ExtResource( 1 )
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/selection_color = Color( 0.823529, 0.313726, 0.803922, 1 )
 bbcode_enabled = true
 bbcode_text = "[color=#FF0000]1. [New Game][/color] - Starting Area
@@ -135,7 +135,7 @@ margin_right = 223.0
 margin_bottom = 31.0
 rect_clip_content = false
 custom_fonts/bold_font = ExtResource( 1 )
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "[color=#FF0000]2. [New Game][/color] - Starting Area
@@ -166,7 +166,7 @@ margin_right = 223.0
 margin_bottom = 31.0
 rect_clip_content = false
 custom_fonts/bold_font = ExtResource( 1 )
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "[color=#FF0000]3. [New Game][/color] - Starting Area

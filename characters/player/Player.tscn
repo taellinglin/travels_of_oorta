@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://characters/commons/states/motion/combat/death.gd" type="Script" id=25]
 [ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=26]
 [ext_resource path="res://characters/player/states/interactions/wait-for-alert-box.gd" type="Script" id=27]
+[ext_resource path="res://sound/menus/spin_down.wav" type="AudioStream" id=28]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AttackAirHeavy"
@@ -455,8 +456,11 @@ anims/TidySword = SubResource( 16 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 28 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.242256, 2.35883 )
+position = Vector2( -1.24226, 2.85883 )
 shape = SubResource( 17 )
 
 [node name="Physics2D" type="Node2D" parent="."]
@@ -473,13 +477,12 @@ script = ExtResource( 4 )
 texture = ExtResource( 5 )
 hframes = 7
 vframes = 16
-frame = 73
+frame = 9
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="CooldownBar" parent="." instance=ExtResource( 6 )]
-visible = true
 margin_left = -15.6545
 margin_top = -18.5
 margin_right = 63.3455

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://managers/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://menus/GameOver.tscn" type="PackedScene" id=2]
@@ -11,12 +11,33 @@
 [ext_resource path="res://environment/tilemaps/TilemapGround.tscn" type="PackedScene" id=9]
 [ext_resource path="res://environment/tilemaps/TilemapForest.tscn" type="PackedScene" id=10]
 [ext_resource path="res://environment/tilemaps/TilemapHerb.tscn" type="PackedScene" id=11]
-[ext_resource path="res://environment/props/House.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Frog0.gd" type="Script" id=12]
 [ext_resource path="res://characters/enemies/dummy/Dummy.tscn" type="PackedScene" id=13]
 [ext_resource path="res://characters/enemies/slime/Slime.tscn" type="PackedScene" id=14]
 [ext_resource path="res://characters/enemies/eagle/Eagle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=16]
 [ext_resource path="res://characters/player/gui/PlayerLifeBar.tscn" type="PackedScene" id=17]
+[ext_resource path="res://graphics/sprites/NPC/frog2.png" type="Texture" id=18]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Frog:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 0.443707 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( 930.242, 636.341 )
@@ -72,9 +93,28 @@ tile_data = PoolIntArray( -2686956, 2, 0, -2686955, 2, 0, -2686954, 3, 0, -26214
 
 [node name="Props" type="Node2D" parent="World"]
 
-[node name="House" parent="World/Props" instance=ExtResource( 12 )]
-position = Vector2( 709.758, -501.341 )
-scene_path = "scenes/Level2"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Props"]
+autoplay = "Idle"
+anims/Idle = SubResource( 2 )
+
+[node name="Frog" type="Sprite" parent="World/Props"]
+position = Vector2( 693.758, -461.591 )
+z_index = -1
+texture = ExtResource( 18 )
+flip_h = true
+hframes = 4
+vframes = 7
+frame = 1
+script = ExtResource( 12 )
+
+[node name="AlertTrigger" type="Area2D" parent="World/Props/Frog"]
+position = Vector2( -9.48832, 53.5473 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Props/Frog/AlertTrigger"]
+shape = SubResource( 1 )
+
+[node name="AlertBoxPosition" type="Position2D" parent="World/Props/Frog"]
+position = Vector2( -99.6485, -41.0888 )
 
 [node name="Enemies" type="Node2D" parent="World"]
 
