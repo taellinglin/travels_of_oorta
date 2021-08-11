@@ -293,12 +293,12 @@ func show_text(chapter, dialog, start_at = 0):
 			audio.play()
 		
 		
-		rect_size = (Vector2(screen_res.x,screen_res.y/dialog_frame_height))
+		rect_size = Vector2(240,64)
 		textObj.rect_size = rect_size
 		textObj.margin_right = 0
-		textObj.margin_bottom = 96
+		textObj.margin_bottom = 0
 		textObj.margin_left = 0
-		textObj.margin_top = 0
+		textObj.margin_top = 96
 		font.size = font_size
 		nextLine.rect_position = rect_size-nextLine.rect_size
 

@@ -9,9 +9,11 @@ extends RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-	margin_left = 8;
-	margin_right = 8;
-	rect_size = Vector2(240,64);
+	margin_left = 16;
+	margin_right = 16+16;
+	margin_top = 16;
+	margin_bottom = 16;
+	#rect_size = Vector2(240,96);
 	
 
 
