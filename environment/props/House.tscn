@@ -4,7 +4,7 @@
 [ext_resource path="res://environment/props/House.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 14.6993 )
+extents = Vector2( 14.5858, 12.049 )
 
 [node name="House" type="Sprite"]
 position = Vector2( 82.8659, 60.869 )

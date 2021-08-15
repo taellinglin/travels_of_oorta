@@ -16,7 +16,7 @@ func _on_Body_entered(body: Character) -> void:
 	#	ennemy and player
 	if not body.is_invincible:
 		.make_damage(body)
-		get_parent().get_node('Slash').slash(type_of_attack)
+		get_parent().get_node('Gust').get_global_mouse_position(type_of_attack)
 
 	
 """

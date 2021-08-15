@@ -51,7 +51,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/slash-Sheet.png-b909018ba29c19441999af5d2332648e.stex"
 
 [node name="Slash" type="Node2D"]
 script = ExtResource( 1 )
@@ -64,4 +63,4 @@ anims/Medium = SubResource( 3 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = SubResource( 4 )
 hframes = 3
-frame = 1
+frame = 2

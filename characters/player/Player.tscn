@@ -12,7 +12,7 @@
 [ext_resource path="res://characters/player/states/motion/in-air/double-jump.gd" type="Script" id=10]
 [ext_resource path="res://characters/player/states/motion/in-air/fall.gd" type="Script" id=11]
 [ext_resource path="res://characters/player/states/motion/combat/attack-light.gd" type="Script" id=12]
-[ext_resource path="res://characters/player/PlayerDamageZone.gd" type="Script" id=13]
+[ext_resource path="res://characters/player/GustDamageZone.gd" type="Script" id=13]
 [ext_resource path="res://effects/Slash.tscn" type="PackedScene" id=14]
 [ext_resource path="res://characters/player/states/motion/combat/attack-medium.gd" type="Script" id=15]
 [ext_resource path="res://characters/player/states/motion/combat/attack-heavy.gd" type="Script" id=16]
@@ -422,7 +422,7 @@ radius = 5.30756
 height = 19.6778
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 28.0249, 10 )
+extents = Vector2( 19.6836, 10 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 15, 15.7378 )
@@ -528,13 +528,12 @@ position = Vector2( -2, 0 )
 script = ExtResource( 15 )
 
 [node name="DamageZone" type="Area2D" parent="States/AttackMedium"]
-visible = false
 collision_layer = 0
 collision_mask = 4
 script = ExtResource( 13 )
 
 [node name="HitBox" type="CollisionShape2D" parent="States/AttackMedium/DamageZone"]
-position = Vector2( 11.0379, -0.69376 )
+position = Vector2( 1.0379, 1.30624 )
 shape = SubResource( 18 )
 
 [node name="Slash" parent="States/AttackMedium" instance=ExtResource( 14 )]
@@ -545,7 +544,6 @@ position = Vector2( 24, 2 )
 script = ExtResource( 16 )
 
 [node name="DamageZone" type="Area2D" parent="States/AttackHeavy"]
-visible = false
 position = Vector2( 1, 0 )
 monitoring = false
 collision_layer = 0
@@ -553,7 +551,7 @@ collision_mask = 4
 script = ExtResource( 13 )
 
 [node name="HitBox" type="CollisionShape2D" parent="States/AttackHeavy/DamageZone"]
-position = Vector2( 0, 5 )
+position = Vector2( -1.25, 1.75 )
 shape = SubResource( 18 )
 
 [node name="Slash" parent="States/AttackHeavy" instance=ExtResource( 14 )]
@@ -644,6 +642,7 @@ script = ExtResource( 25 )
 visible = false
 
 [node name="WaitForAlertBox" type="Node2D" parent="States"]
+position = Vector2( 0.25, 0.75 )
 script = ExtResource( 27 )
 
 [connection signal="timeout" from="States/CombatIdle/CombatIdleTimer" to="States/CombatIdle" method="_on_CombatIdleTimer_timeout"]

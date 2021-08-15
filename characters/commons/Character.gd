@@ -25,6 +25,7 @@ var states_stack: Array = []
 # character condition
 var is_alive: bool = true
 var can_attack: bool = true
+var has_gust: bool = true
 var gravity_enable: bool = true
 var can_double_jump: bool = true
 var is_invincible: bool = false

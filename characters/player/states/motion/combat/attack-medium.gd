@@ -1,7 +1,7 @@
 extends Attack
 
 export(float) var amount := 40.0
-onready var stream: Resource = preload('res://audio/attack.wav')
+onready var stream: Resource = preload('res://audio/gust.wav')
 
 func enter(host: Player) -> void:
 	host.get_node('AnimationPlayer').play('AttackMedium')
@@ -15,4 +15,4 @@ func _on_Animation_finished(anim_name: String, host: Player) -> void:
 	if not host.has_set_next_attack:
 		emit_signal('finished', 'CombatIdle')
 	else:
-		emit_signal('finished', 'AttackHeavy')
+		emit_signal('finished', 'Idle')
