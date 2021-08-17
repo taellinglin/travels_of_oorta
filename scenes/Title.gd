@@ -14,7 +14,7 @@ func _ready():
 func _input(event):
 	if(event.is_action("ui_accept")):
 		get_node("AudioStreamPlayer2").play()
-		get_tree().change_scene("res://interfaces/menu/MainMenu.tscn");
+		LevelManager.goto_scene("res://menus/MainMenu.tscn");
 
 
 

@@ -12,6 +12,3 @@ func _input(event):
 	if(event.is_action_pressed("ui_accept")):
 		Sfx.sfx_back()
 		get_tree().change_scene('res://menus/MainMenu.tscn')
-	if(event.is_action_pressed("ui_back")):
-		Sfx.sfx_back()
-		get_tree().change_scene('res://menus/MainMenu.tscn')

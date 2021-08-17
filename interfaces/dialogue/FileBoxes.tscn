@@ -15,19 +15,19 @@
 [ext_resource path="res://graphics/backgrounds/title_bg.png" type="Texture" id=13]
 [ext_resource path="res://graphics/backgrounds/trees2.png" type="Texture" id=14]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 11 )
 shader_param/scroll_speed = 0.002
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 11 )
 shader_param/scroll_speed = -0.025
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 11 )
 shader_param/scroll_speed = 0.05
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 10
 outline_size = 1
 outline_color = Color( 0.121569, 0, 0.137255, 1 )
@@ -42,7 +42,7 @@ script = ExtResource( 8 )
 [node name="Backdrop" type="Node" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="Backdrop"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 margin_left = -2.0
 margin_top = 5.0
 margin_right = 254.0
@@ -56,7 +56,7 @@ __meta__ = {
 }
 
 [node name="TextureRect3" type="TextureRect" parent="Backdrop"]
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = 6.0
 margin_top = 53.0
 margin_right = 246.0
@@ -70,7 +70,7 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="Backdrop"]
-material = SubResource( 4 )
+material = SubResource( 3 )
 margin_left = -2.0
 margin_top = 5.0
 margin_right = 254.0
@@ -104,7 +104,7 @@ margin_right = 223.0
 margin_bottom = 31.0
 rect_clip_content = false
 custom_fonts/bold_font = ExtResource( 1 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/selection_color = Color( 0.823529, 0.313726, 0.803922, 1 )
 bbcode_enabled = true
 bbcode_text = "[color=#FF0000]1. [New Game][/color] - Starting Area
@@ -135,7 +135,7 @@ margin_right = 223.0
 margin_bottom = 31.0
 rect_clip_content = false
 custom_fonts/bold_font = ExtResource( 1 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "[color=#FF0000]2. [New Game][/color] - Starting Area
@@ -166,7 +166,7 @@ margin_right = 223.0
 margin_bottom = 31.0
 rect_clip_content = false
 custom_fonts/bold_font = ExtResource( 1 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "[color=#FF0000]3. [New Game][/color] - Starting Area

@@ -33,6 +33,8 @@ func _input(event):
 func pause_play():
 	if cursor_y >= 0 && cursor_y < 3:
 		get_parent().play(soundtrack.tracks[cursor_tracks])
+	if cursor_y == 3:
+		LevelManager.goto_scene("res://menus/MainMenu.tscn")
 		
 func move_up():
 	if cursor_y > 0:

@@ -24,7 +24,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "roll"
 length = 10.0
 tracks/0/type = "value"
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 160 ), Vector2( 0, -248 ), Vector2( 0, -248 ) ]
 }
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_color = Color( 1, 1, 1, 1 )
 corner_radius_top_left = 2
@@ -147,7 +147,7 @@ taellinglin
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer"]
 autoplay = "roll"
-anims/roll = SubResource( 5 )
+anims/roll = SubResource( 4 )
 
 [node name="file_select_cursor" type="Sprite" parent="PanelContainer"]
 position = Vector2( 144.796, 120 )
@@ -158,7 +158,7 @@ margin_left = 177.0
 margin_top = 134.0
 margin_right = 228.0
 margin_bottom = 158.0
-custom_styles/hover = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = ExtResource( 7 )
 custom_styles/focus = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )

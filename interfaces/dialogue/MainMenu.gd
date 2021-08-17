@@ -12,26 +12,33 @@ func _ready():
 	set_process(true);
 	set_process_input(true);
 	Sfx.cursori = 0;
-	Sfx.maxitems = 2;
+	Sfx.maxitems = 3;
 	Sfx.menumode = true;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	offset.y = 24*(Sfx.cursori);
+	offset.y = 21*(Sfx.cursori);
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		file_select = Sfx.cursori;
+		print("File Select: ", file_select as String)
 		match file_select:
 			0:
 				LevelManager.goto_scene("res://interfaces/dialogue/FileBoxes.tscn")
 			
 			1:
-				get_tree().change_scene("res://interfaces/menu/Credits.tscn")
+				LevelManager.goto_scene("res://menus/Soundtrack.tscn")
+				#get_tree().change_scene("res://interfaces/menu/Credits.tscn")
 			
 			2:
-				get_tree().change_scene("res://scenes/Title.tscn")
+				LevelManager.goto_scene("res://menus/Credits.tscn")
+				
+				#get_tree().change_scene("res://scenes/Title.tscn")
+			3:
+				LevelManager.goto_scene("res://menus/Title.tscn")
 				
 	if event.is_action_pressed("ui_cancel"):
-			get_tree().change_scene("res://scenes/Title.tscn")
+		Sfx.menumode = false
+		LevelManager.goto_scene("res://menus/Title.tscn")
 		

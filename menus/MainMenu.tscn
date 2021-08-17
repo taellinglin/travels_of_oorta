@@ -166,16 +166,12 @@ __meta__ = {
 }
 
 [node name="CenterContainer" parent="." instance=ExtResource( 3 )]
-margin_left = -3.0
-margin_top = -1.0
-margin_right = -3.0
-margin_bottom = -1.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
 
 [node name="CursorIcon" type="Sprite" parent="."]
-position = Vector2( 70, 53 )
+position = Vector2( 66, 48 )
 texture = ExtResource( 8 )
 script = ExtResource( 9 )

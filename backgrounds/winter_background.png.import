@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/oorta-sprite.png-3d91cee51aa2512bd25681b331cc4ef1.stex"
+path="res://.import/winter_background.png-af1f6b26268b068f7e44396a1e6f4d14.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/sprites/oorta-sprite.png"
-dest_files=[ "res://.import/oorta-sprite.png-3d91cee51aa2512bd25681b331cc4ef1.stex" ]
+source_file="res://backgrounds/winter_background.png"
+dest_files=[ "res://.import/winter_background.png-af1f6b26268b068f7e44396a1e6f4d14.stex" ]
 
 [params]
 

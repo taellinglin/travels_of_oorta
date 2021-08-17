@@ -15,7 +15,7 @@ func _input(event):
 	if(event.is_action("ui_accept")):
 		if(!get_node("cursor").playing):
 			get_node("cursor").play()
-			get_tree().change_scene("res://menus/MainMenu.tscn");
+			LevelManager.goto_scene("res://menus/MainMenu.tscn");
 
 
 
