@@ -1,20 +1,51 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://font/Daemon Full Working (1).ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://graphics/gui/file_select_cursor.png" type="Texture" id=2]
 [ext_resource path="res://menus/cursor_soundtrack.gd" type="Script" id=3]
 [ext_resource path="res://menus/Soundtrack.gd" type="Script" id=4]
-[ext_resource path="res://graphics/background.bmp" type="Texture" id=5]
+[ext_resource path="res://shaders/scroll.shader" type="Shader" id=5]
+[ext_resource path="res://graphics/backgrounds/title_bg.png" type="Texture" id=6]
+[ext_resource path="res://graphics/backgrounds/bg_fg.png" type="Texture" id=7]
+[ext_resource path="res://graphics/backgrounds/trees2.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 5 )
+shader_param/scroll_speed = 0.002
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 5 )
+shader_param/scroll_speed = -0.025
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 5 )
+shader_param/scroll_speed = 0.05
+
+[sub_resource type="Animation" id=10]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=11]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=12]
 size = 12
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = -3
 font_data = ExtResource( 1 )
 
 [node name="SoundtrackMenu" type="Control"]
@@ -23,16 +54,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="background" type="Sprite" parent="."]
-position = Vector2( 128, 128 )
-texture = ExtResource( 5 )
+[node name="Background" type="Control" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_right = 256.0
+margin_bottom = 257.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 6 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="Background"]
+material = SubResource( 2 )
+anchor_top = -0.003125
+anchor_right = 2.5
+anchor_bottom = 1.87188
+margin_top = 1.0
+margin_right = 256.0
+margin_bottom = 163.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_right = 256.0
+margin_bottom = 257.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+visible = false
+margin_top = 1.0
+margin_right = 257.0
+margin_bottom = 163.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
+autoplay = "fadein"
+anims/fadein = SubResource( 10 )
 
 [node name="Title" type="Label" parent="."]
-margin_left = 15.0
+margin_left = 16.0
 margin_top = 8.0
-margin_right = 223.0
+margin_right = 224.0
 margin_bottom = 43.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 11 )
 text = "soundtrack
 "
 align = 1
@@ -48,7 +137,7 @@ margin_bottom = 67.0
 focus_neighbour_top = NodePath("../back")
 focus_neighbour_bottom = NodePath("../VolumeLabel")
 focus_mode = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 12 )
 text = "track:
 "
 __meta__ = {
@@ -60,7 +149,8 @@ margin_left = 104.0
 margin_top = 32.0
 margin_right = 224.0
 margin_bottom = 59.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 12 )
+text = "<track>"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -71,7 +161,7 @@ margin_left = 48.0
 margin_top = 56.0
 margin_right = 96.0
 margin_bottom = 83.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 12 )
 text = "artist:
 "
 __meta__ = {
@@ -83,7 +173,8 @@ margin_left = 104.0
 margin_top = 56.0
 margin_right = 224.0
 margin_bottom = 83.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 12 )
+text = "<artist>"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -96,7 +187,7 @@ margin_right = 95.0
 margin_bottom = 107.0
 focus_neighbour_top = NodePath("../TrackLabel")
 focus_neighbour_bottom = NodePath("../pitch")
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 12 )
 text = "volume:
 "
 __meta__ = {
@@ -108,9 +199,8 @@ margin_left = 104.0
 margin_top = 80.0
 margin_right = 224.0
 margin_bottom = 107.0
-custom_fonts/font = SubResource( 2 )
-text = "
-"
+custom_fonts/font = SubResource( 12 )
+text = "<volume>"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -122,7 +212,7 @@ margin_right = 88.0
 margin_bottom = 131.0
 focus_neighbour_top = NodePath("../volume")
 focus_neighbour_bottom = NodePath("../back")
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 12 )
 text = "pitch:
 "
 __meta__ = {
@@ -134,18 +224,19 @@ margin_left = 104.0
 margin_top = 104.0
 margin_right = 224.0
 margin_bottom = 131.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 12 )
+text = "<pitch>"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="back" type="Label" parent="."]
-margin_left = 8.0
-margin_top = 128.0
-margin_right = 216.0
-margin_bottom = 155.0
-custom_fonts/font = SubResource( 2 )
+margin_left = 16.0
+margin_top = 131.0
+margin_right = 224.0
+margin_bottom = 158.0
+custom_fonts/font = SubResource( 12 )
 text = "back
 "
 align = 1

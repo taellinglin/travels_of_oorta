@@ -72,21 +72,21 @@ export var track_names = [
 	"Temple Basement",
 	"Battle Encounter",
 	"Master Mellow",
-	"Shamisen - Beta Title Screen",
+	"Shamisen - Beta Title",
 	"Parade",
 	"House Tune",
-	"Click Clock Freight(version 2)",
+	"Click Clock Freight (v2)",
 	"Item in Room",
 	"Maze",
 	"Paradise",
-	"Main_Menu",
+	"Main Menu",
 	"Menu Other",
 	"Metronome March 2",
 	"Mountains",
 	"Sudden Attack",
 	"Town",
 	"Trails",
-	"Wind-Up Toy - Extended"
+	"Wind-Up Toy (Extended)"
 ]
 
 export var artist_names = [

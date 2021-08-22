@@ -18,6 +18,11 @@ var soundtrack
 func _ready():
 	set_process(true)
 	soundtrack = get_parent()
+	soundtrack.get_node("track").text = soundtrack.track_names[cursor_tracks]
+	soundtrack.get_node("artist").text = soundtrack.artist_names[cursor_tracks]
+	soundtrack.get_node("volume").text = soundtrack.get_node("TrackPlayer").get_volume_db() as String
+	soundtrack.get_node("pitch").text = soundtrack.get_node("TrackPlayer").get_pitch_scale() as String
+	
 func _input(event):
 	if event.is_action_pressed("ui_up"):
 		move_up()
