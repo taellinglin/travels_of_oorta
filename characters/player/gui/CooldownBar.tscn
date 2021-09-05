@@ -13,4 +13,3 @@ script = ExtResource( 2 )
 COLOR = Color( 0.121569, 0.388235, 0.8, 1 )
 
 [node name="Tween" type="Tween" parent="."]
-

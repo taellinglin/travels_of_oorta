@@ -32,7 +32,7 @@ shader = ExtResource( 6 )
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 18 )
-shader_param/scroll_speed = 0.002
+shader_param/scroll_speed = 0.0
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 18 )
@@ -160,9 +160,10 @@ motion_scale = Vector2( 0.9, 0.9 )
 material = SubResource( 4 )
 anchor_right = 2.5
 anchor_bottom = 1.875
-margin_left = 1.79602
-margin_right = 260.796
+margin_left = -0.203979
+margin_right = 258.796
 margin_bottom = -115.5
+rect_scale = Vector2( 0.565578, 0.871752 )
 size_flags_horizontal = 5
 size_flags_vertical = 5
 texture = ExtResource( 19 )
@@ -222,11 +223,10 @@ position = Vector2( -122.242, -532.341 )
 [node name="Props" type="Node2D" parent="World"]
 
 [node name="Frog" type="Sprite" parent="World/Props"]
-position = Vector2( -3.742, -432.841 )
+position = Vector2( -826.242, -1248.35 )
 z_index = -1
 texture = ExtResource( 21 )
 offset = Vector2( 9.05804, -8.54312 )
-flip_h = true
 hframes = 4
 vframes = 7
 script = ExtResource( 7 )

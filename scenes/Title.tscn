@@ -42,7 +42,7 @@ image = SubResource( 13 )
 size = Vector2( 103, 80 )
 
 [sub_resource type="DynamicFont" id=12]
-size = 13
+size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
@@ -103,11 +103,12 @@ anchor_right = 2.5
 anchor_bottom = 1.875
 margin_right = 259.0
 margin_bottom = -115.5
-size_flags_horizontal = 5
-size_flags_vertical = 5
+rect_scale = Vector2( 0.351695, 0.603983 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 3 )
 expand = true
-stretch_mode = 2
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -121,11 +122,12 @@ margin_left = 1.0
 margin_top = 1.4375
 margin_right = 256.0
 margin_bottom = -112.063
-size_flags_horizontal = 5
-size_flags_vertical = 5
+rect_scale = Vector2( 0.354819, 0.663533 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 1 )
 expand = true
-stretch_mode = 2
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -134,31 +136,33 @@ __meta__ = {
 material = SubResource( 3 )
 anchor_right = 2.5
 anchor_bottom = 1.875
-margin_left = 2.0
-margin_top = -12.0
-margin_right = 262.0
-margin_bottom = -42.5
-size_flags_horizontal = 5
-size_flags_vertical = 5
+margin_left = -0.47131
+margin_top = -4.65393
+margin_right = 259.529
+margin_bottom = -35.1539
+rect_scale = Vector2( 0.438977, 0.895388 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 2 )
 expand = true
-stretch_mode = 2
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Logo" type="Sprite" parent="."]
 material = SubResource( 4 )
-position = Vector2( 120, 62 )
+position = Vector2( 399.387, 275.316 )
+scale = Vector2( 4, 4 )
 z_index = 11
 texture = SubResource( 6 )
 script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 14.0
-margin_top = 121.0
-margin_right = 253.0
-margin_bottom = 135.0
+margin_left = 266.958
+margin_top = 498.55
+margin_right = 554.958
+margin_bottom = 530.55
 custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "- Press Start - "

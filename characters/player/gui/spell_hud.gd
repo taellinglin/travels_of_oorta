@@ -23,6 +23,7 @@ func _ready():
 	spell_index = 0;
 	self.get_node("spell_name").text = str(spell_names[spell_index]);
 	self.frame = spell_index;
+	self.position = Vector2(get_viewport().size.x - 48, 16)
 	
 func _input(event):
 	print_debug(spell_index);

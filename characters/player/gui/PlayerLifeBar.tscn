@@ -238,7 +238,7 @@ position = Vector2( -1.90735e-06, 16.25 )
 texture = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 192, 16.75 )
+position = Vector2( 192, 16 )
 frames = SubResource( 10 )
 animation = "all_spell_sprites"
 script = ExtResource( 7 )
