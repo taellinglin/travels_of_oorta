@@ -11,7 +11,7 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	rotate(0.000035);
+	rotate(0.00050);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

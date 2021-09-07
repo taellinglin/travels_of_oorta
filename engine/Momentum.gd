@@ -1,7 +1,7 @@
 extends Node2D
 class_name Momentum
 
-export(float) var DURATION: float = 0.07 
+export(float) var DURATION: float = 0.04 
 export(float) var STRENGTH: float = 1.0
 
 const END_VALUE = 1
@@ -13,7 +13,7 @@ var start_value: float = 0
 
 func attack_momentum() -> void:
 	time_start = OS.get_ticks_msec()
-	duration_ms = DURATION * 1000
+	duration_ms = DURATION * 100
 	start_value = 1 - STRENGTH
 	Engine.time_scale = start_value
 	is_active = true

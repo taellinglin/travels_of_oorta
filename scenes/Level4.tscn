@@ -19,7 +19,7 @@
 [ext_resource path="res://characters/player/gui/PlayerLifeBar.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/House_Level4.gd" type="Script" id=18]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 0.443707 )
 
 [node name="Game" type="Node2D"]
@@ -86,7 +86,7 @@ script = ExtResource( 18 )
 position = Vector2( -9.48832, 53.5473 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Props/House/AlertTrigger"]
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="AlertBoxPosition" type="Position2D" parent="World/Props/House"]
 position = Vector2( -99.6485, -41.0888 )

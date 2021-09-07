@@ -22,12 +22,12 @@ func _input(event):
 		file_select = Sfx.cursori;
 		match file_select:
 			0:
-				LevelManager.goto_scene("res://scenes/Level9.tscn")
+				LevelManager.goto_scene("res://scenes/Level0.tscn")
 			
 			1:
-				LevelManager.goto_scene("res://scenes/Level1.tscn")
+				LevelManager.goto_scene("res://scenes/Level7.tscn")
 			
 			2:
-				LevelManager.goto_scene("res://scenes/Level8.tscn")
+				LevelManager.goto_scene("res://scenes/Level11.tscn")
 		
 		

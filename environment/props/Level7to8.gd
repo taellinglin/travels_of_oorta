@@ -1,5 +1,5 @@
 extends Sprite
-class_name Interaction7
+class_name Interaction11
 
 signal interaction(type)
 
@@ -27,4 +27,4 @@ func _on_body_enter(body: Object) -> void:
 			self.add_child(alert_box)
 			alert_box.start(body)
 			emit_signal('interaction', 'WaitForAlertBox')
-			LevelManager.goto_scene("res://scenes/Level6.tscn")
+			LevelManager.goto_scene("res://scenes/Level8.tscn")

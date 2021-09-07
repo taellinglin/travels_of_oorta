@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://managers/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://menus/GameOver.tscn" type="PackedScene" id=2]
@@ -11,17 +11,20 @@
 [ext_resource path="res://environment/tilemaps/TilemapGround.tscn" type="PackedScene" id=9]
 [ext_resource path="res://environment/tilemaps/TilemapForest.tscn" type="PackedScene" id=10]
 [ext_resource path="res://environment/tilemaps/TilemapHerb.tscn" type="PackedScene" id=11]
-[ext_resource path="res://environment/props/House.tscn" type="PackedScene" id=12]
+[ext_resource path="res://environment/props/House.gd" type="Script" id=12]
 [ext_resource path="res://characters/enemies/dummy/Dummy.tscn" type="PackedScene" id=13]
 [ext_resource path="res://characters/enemies/slime/Slime.tscn" type="PackedScene" id=14]
 [ext_resource path="res://characters/enemies/eagle/Eagle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=16]
 [ext_resource path="res://characters/player/gui/PlayerLifeBar.tscn" type="PackedScene" id=17]
-[ext_resource path="res://environment/tilemaps/TilemapBackground.gd" type="Script" id=18]
+[ext_resource path="res://environment/tilemaps/A2.gd" type="Script" id=18]
 [ext_resource path="res://environment/tilemaps/TilemapBackground2.gd" type="Script" id=19]
 [ext_resource path="res://environment/tilemaps/TilemapBackground3.gd" type="Script" id=20]
 [ext_resource path="res://graphics/sprites/NPC/frog2.png" type="Texture" id=21]
 [ext_resource path="res://tilesets/limbo2.tres" type="TileSet" id=22]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.5858, 12.049 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( 930.242, 636.341 )
@@ -93,13 +96,26 @@ tile_data = PoolIntArray( -2686956, 2, 0, -2686955, 2, 0, -2686954, 3, 0, -26214
 
 [node name="Props" type="Node2D" parent="World"]
 
-[node name="Frog" parent="World/Props" instance=ExtResource( 12 )]
+[node name="Frog" type="Sprite" parent="World/Props"]
 position = Vector2( 677.758, -452.941 )
+z_index = -1
 texture = ExtResource( 21 )
+offset = Vector2( 9.05804, -8.54312 )
 flip_h = true
 hframes = 4
 vframes = 7
+script = ExtResource( 12 )
 scene_path = "scenes/Level2"
+
+[node name="AlertTrigger" type="Area2D" parent="World/Props/Frog"]
+position = Vector2( -2.48832, 39.5473 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Props/Frog/AlertTrigger"]
+position = Vector2( 6.76566, -46.5801 )
+shape = SubResource( 1 )
+
+[node name="AlertBoxPosition" type="Position2D" parent="World/Props/Frog"]
+position = Vector2( -22.3971, -5.02635 )
 
 [node name="Enemies" type="Node2D" parent="World"]
 

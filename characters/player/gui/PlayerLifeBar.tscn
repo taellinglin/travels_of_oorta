@@ -176,12 +176,12 @@ anims/Hit = SubResource( 5 )
 anims/Shake = SubResource( 6 )
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
-self_modulate = Color( 0.658562, 0.658562, 0.658562, 1 )
-margin_left = 9.25
-margin_top = 0.75
-margin_right = 124.25
-margin_bottom = 12.75
-value = 100.0
+margin_left = 9.0
+margin_top = 1.0
+margin_right = 128.0
+margin_bottom = 13.0
+max_value = 500.0
+value = 500.0
 texture_over = SubResource( 7 )
 texture_progress = ExtResource( 9 )
 script = ExtResource( 4 )

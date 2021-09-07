@@ -6,7 +6,7 @@ const HIGH_EXP_TRIGGER = 90
 var is_health_low: bool = false
 var is_magic_low: bool =  false
 var is_exp_high: bool = false
-
+var max_health = 500
 
 func _ready() -> void:
 	$AnimationPlayer.connect('animation_finished', self, '_on_Animation_finished')
@@ -18,8 +18,8 @@ func _ready() -> void:
 
 
 func _on_Health_changed(health_value: float) -> void:
-	$TextureProgress.update_value(health_value)
-	$hp.text = ("Hp:" + str(health_value))
+	$TextureProgress.update_value((health_value/max_health)*500)
+	$hp.text = ("Hp:" + str(health_value/max_health))
 	is_health_low = health_value <= LOW_HEALTH_TRIGGER
 	$AnimationPlayer.play("Hit")
 

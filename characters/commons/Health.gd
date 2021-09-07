@@ -14,7 +14,7 @@ signal take_damage(alive, direction)
 signal momentum()
 
 export(float) var max_health: float = 500 
-export(float) var health: float = 0.0
+export(float) var health: float = 500
 
 
 func _ready() -> void:
