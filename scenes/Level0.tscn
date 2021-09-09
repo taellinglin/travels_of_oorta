@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://managers/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://menus/GameOver.tscn" type="PackedScene" id=2]
@@ -23,6 +23,10 @@
 [ext_resource path="res://tilesets/limbo.tres" type="TileSet" id=21]
 [ext_resource path="res://shaders/scroll.shader" type="Shader" id=22]
 [ext_resource path="res://scroll.shader" type="Shader" id=23]
+[ext_resource path="res://addons/SMRT/dialog.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/Level_0_Dialog.gd" type="Script" id=25]
+[ext_resource path="res://graphics/sprites/NPC/frog2.png" type="Texture" id=26]
+[ext_resource path="res://portraits/new_spriteframes.tres" type="SpriteFrames" id=27]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 23 )
@@ -45,11 +49,14 @@ shader_param/scroll_speed = -0.025
 shader = ExtResource( 22 )
 shader_param/scroll_speed = 0.05
 
-[sub_resource type="Curve" id=7]
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="Curve" id=8]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=8]
-curve = SubResource( 7 )
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( 930.242, 636.341 )
@@ -63,6 +70,18 @@ visible = false
 
 [node name="Pause" parent="Interfaces" instance=ExtResource( 3 )]
 visible = false
+
+[node name="Dialog" type="Control" parent="Interfaces"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" parent="Interfaces/Dialog" instance=ExtResource( 24 )]
+language = "res://dialog/dialog_0.lan"
+face_sprites = ExtResource( 27 )
 
 [node name="Bounds" type="Node2D" parent="."]
 scale = Vector2( 1, 12.36 )
@@ -233,6 +252,26 @@ tile_data = PoolIntArray( -3211205, 24, 0, -3211197, 24, 0, -2949101, 25, 0, -29
 position = Vector2( 1966.03, -535.365 )
 script = ExtResource( 18 )
 
+[node name="Frog" type="Sprite" parent="World/Props"]
+position = Vector2( 375.47, -616.54 )
+z_index = -1
+texture = ExtResource( 26 )
+offset = Vector2( 9.05804, -8.54312 )
+flip_h = true
+hframes = 4
+vframes = 7
+script = ExtResource( 25 )
+
+[node name="AlertTrigger" type="Area2D" parent="World/Props/Frog"]
+position = Vector2( 2.21729e-05, 0.942959 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Props/Frog/AlertTrigger"]
+position = Vector2( 4.29172, -3.73993 )
+shape = SubResource( 7 )
+
+[node name="AlertBoxPosition" type="Position2D" parent="World/Props/Frog"]
+position = Vector2( -6.3971, -49.5264 )
+
 [node name="Enemies" type="Node2D" parent="World"]
 
 [node name="Dummy" parent="World/Enemies" instance=ExtResource( 13 )]
@@ -282,7 +321,9 @@ margin_bottom = 38.5
 
 [node name="Light2D" type="Light2D" parent="World/Player"]
 editor_only = true
-texture = SubResource( 8 )
+texture = SubResource( 9 )
 offset = Vector2( 0, 1 )
 energy = 6.75
 shadow_enabled = true
+
+[connection signal="finished" from="Interfaces/Dialog/NinePatchRect" to="World/Props/Frog" method="_on_NinePatchRect_finished"]

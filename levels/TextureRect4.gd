@@ -5,7 +5,7 @@ extends Sprite
 # var a = 2
 # var b = "text"
 var voffset = [0,1,2,3,2,1,0,-1,-2,-3,-2,-1]
-var clock = 5
+var clock = 50
 var c = 0;
 var offset_frame = 0;
 const offset_framecount = 12;

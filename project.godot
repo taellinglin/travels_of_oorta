@@ -44,31 +44,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://characters/commons/states/motion/combat/death.gd"
 }, {
-"base": "Node",
-"class": "Dialogic",
-"language": "GDScript",
-"path": "res://addons/dialogic/addons/dialogic/Other/DialogicClass.gd"
-}, {
-"base": "Control",
-"class": "DialogicBackgroundMusic",
-"language": "GDScript",
-"path": "res://addons/dialogic/addons/dialogic/Nodes/BackgroundMusic.gd"
-}, {
-"base": "Node",
-"class": "DialogicDefinitionsUtil",
-"language": "GDScript",
-"path": "res://addons/dialogic/addons/dialogic/Other/DialogicDefinitionsUtil.gd"
-}, {
-"base": "Reference",
-"class": "DialogicResources",
-"language": "GDScript",
-"path": "res://addons/dialogic/addons/dialogic/Other/DialogicResources.gd"
-}, {
-"base": "Reference",
-"class": "DialogicUtil",
-"language": "GDScript",
-"path": "res://addons/dialogic/addons/dialogic/Other/DialogicUtil.gd"
-}, {
 "base": "NinePatchRect",
 "class": "DialogueBox",
 "language": "GDScript",
@@ -210,11 +185,6 @@ _global_script_classes=[ {
 "path": "res://scenes/Level10to11.gd"
 }, {
 "base": "Sprite",
-"class": "Interaction14",
-"language": "GDScript",
-"path": "res://scenes/Level11towinter1.gd"
-}, {
-"base": "Sprite",
 "class": "Interaction15",
 "language": "GDScript",
 "path": "res://scenes/winter1tolevel0.gd"
@@ -225,9 +195,19 @@ _global_script_classes=[ {
 "path": "res://environment/props/level6to7.gd"
 }, {
 "base": "Sprite",
+"class": "Interaction18",
+"language": "GDScript",
+"path": "res://scenes/Level11towinter1.gd"
+}, {
+"base": "Sprite",
 "class": "Interaction2",
 "language": "GDScript",
 "path": "res://environment/props/House0.gd"
+}, {
+"base": "Sprite",
+"class": "Interaction20",
+"language": "GDScript",
+"path": "res://scenes/Level_0_Dialog.gd"
 }, {
 "base": "Sprite",
 "class": "Interaction3",
@@ -317,11 +297,6 @@ _global_script_class_icons={
 "Character": "",
 "DamageZone": "",
 "Death": "",
-"Dialogic": "",
-"DialogicBackgroundMusic": "",
-"DialogicDefinitionsUtil": "",
-"DialogicResources": "",
-"DialogicUtil": "",
 "DialogueBox": "res://addons/adbox/icon.png",
 "Draw": "",
 "Dummy": "",
@@ -350,10 +325,11 @@ _global_script_class_icons={
 "Interaction11": "",
 "Interaction12": "",
 "Interaction13": "",
-"Interaction14": "",
 "Interaction15": "",
 "Interaction16": "",
+"Interaction18": "",
 "Interaction2": "",
+"Interaction20": "",
 "Interaction3": "",
 "Interaction4": "",
 "Interaction5": "",
@@ -402,6 +378,7 @@ config/windows_native_icon="res://icon.ico"
 LevelManager="*res://managers/LevelManager.gd"
 Sfx="*res://managers/Sfx.gd"
 Global="*res://Global.gd"
+PlayerStats="*res://player_stats.gd"
 
 [debug]
 

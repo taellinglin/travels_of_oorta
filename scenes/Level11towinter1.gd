@@ -1,5 +1,5 @@
 extends Sprite
-class_name Interaction14
+class_name Interaction18
 
 signal interaction(type)
 

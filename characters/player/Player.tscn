@@ -483,7 +483,6 @@ frame = 8
 wait_time = 0.5
 
 [node name="CooldownBar" parent="." instance=ExtResource( 6 )]
-visible = true
 margin_left = -15.6545
 margin_top = -18.5
 margin_right = 63.3455

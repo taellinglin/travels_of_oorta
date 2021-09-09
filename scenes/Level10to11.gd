@@ -27,4 +27,4 @@ func _on_body_enter(body: Object) -> void:
 			self.add_child(alert_box)
 			alert_box.start(body)
 			emit_signal('interaction', 'WaitForAlertBox')
-			LevelManager.goto_scene("res://scenes/winter1.tscn")
+			LevelManager.goto_scene("res://scenes/Level11.tscn")
