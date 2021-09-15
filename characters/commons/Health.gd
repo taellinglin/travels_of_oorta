@@ -13,12 +13,12 @@ signal take_damage(alive, direction)
 # signal emitted to "slow" the time when the character is hitted
 signal momentum()
 
-export(float) var max_health: float = 500 
-export(float) var health: float = 500
-
+var health
+var max_health
 
 func _ready() -> void:
-	health = max_health
+	health =  PlayerStats.get_hp()
+	max_health = PlayerStats.get_max_hp()
 	emit_signal('max_health_changed', max_health)
 	emit_signal('health_changed', health)
 	

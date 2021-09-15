@@ -34,8 +34,8 @@ var BOTTOM
 
 # EXPORTED VARS =====>
 export (AudioStreamSample) var beep_WAV = preload("res://addons/SMRT/beep_letter.wav")
-export (DynamicFont) var font = preload("res://font/Daemon.tres")
-export (int) var font_size = 10
+export (DynamicFont) var font = preload("res://addons/SMRT/font/main_font.tres")
+export (int) var font_size = 32
 export (SpriteFrames) var face_sprites
 export (Texture) var next_dialog_texture = preload("res://addons/SMRT/next_line.png")
 export var dialog_frame_height = 4
@@ -105,7 +105,7 @@ func _ready():
 	if font == null:
 		if show_debug_messages:
 			print("Font file not found, loading default")
-		load("res://font/Daemon.tres")
+		load("res://addons/SMRT/font/main_font.tres")
 		
 	if face_sprites == null:
 		if show_debug_messages:
@@ -295,11 +295,10 @@ func show_text(chapter, dialog, start_at = 0):
 		
 		rect_size = (Vector2(screen_res.x,screen_res.y/dialog_frame_height))
 		textObj.rect_size = rect_size
-		textObj.margin_right = 10
-		textObj.margin_bottom = 10
-		textObj.margin_left = 220
-		textObj.margin_top = 10
-		font.size = font_size
+		textObj.margin_right = 16
+		textObj.margin_bottom = 16
+		textObj.margin_left = 16
+		textObj.margin_top = 16
 		nextLine.rect_position = rect_size-nextLine.rect_size
 
 		#POSITION if the dialog is not bubble
@@ -326,13 +325,13 @@ func show_text(chapter, dialog, start_at = 0):
 		elif side == 1:
 			textObj.margin_left =  texture_width + texture_width/3
 			textObj.margin_right = dimensions.text_margin.right
-			face.position = Vector2(8+texture_width/2,face_v_pos-10)
+			face.position = Vector2(8+texture_width/2,face_v_pos)
 			face.flip_h  = false
 			face.visible = true
 		elif side == 2:
 			textObj.margin_left = dimensions.text_margin.left
 			textObj.margin_right = texture_width + texture_width/3
-			face.position = Vector2(rect_size.x-texture_width+8,face_v_pos-10)
+			face.position = Vector2(rect_size.x-texture_width-8,face_v_pos)
 			face.flip_h = true
 		while textObj.get_total_character_count() > textObj.get_visible_characters():
 			if not typewriter:

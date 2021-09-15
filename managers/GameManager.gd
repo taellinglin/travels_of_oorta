@@ -1,6 +1,6 @@
 extends Node2D
 
-export(String) var scene_path = ''
+export(String) var scene_path = 'scenes/Level0'
 var min_limit: Vector2 = Vector2()
 var max_limit: Vector2 = Vector2()
 

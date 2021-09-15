@@ -20,7 +20,7 @@ var spell_names = {
 func _ready():
 	set_process_input(false);
 	set_process(true);
-	spell_index = 0;
+	spell_index = PlayerStats.get_spell()
 	self.get_node("spell_name").text = str(spell_names[spell_index]);
 	self.frame = spell_index;
 	self.position = Vector2(get_viewport().size.x - 48, 16)
@@ -32,6 +32,7 @@ func _input(event):
 		if spell_index < max_spells:
 			spell_index += 1;
 			print("Spell: ("+str(spell_index)+"/"+str(max_spells)+")");
+			PlayerStats.set_spell(spell_index)
 			#self.position(spell_index);
 			self.get_node("spell_name").text = str(spell_names[spell_index]);
 			self.frame = spell_index;
@@ -41,6 +42,7 @@ func _input(event):
 		if (spell_index > 0):
 			spell_index -= 1;
 			print("Spell: ("+str(spell_index)+"/"+str(max_spells)+")");
+			PlayerStats.set_spell(spell_index)
 			self.get_node("spell_name").text = str(spell_names[spell_index]);
 			self.frame = spell_index;
 		
@@ -48,6 +50,7 @@ func _process(delta):
 	if(Input.is_action_pressed("r-trigger") && Input.is_action_just_pressed("move_up")):
 		if spell_index < max_spells:
 			spell_index += 1;
+			PlayerStats.set_spell(spell_index)
 			Sfx.sfx_cursor();
 		#print("Spell: (", spell_index+"/", max_spells+")");
 			#self.position(spell_index);
@@ -58,7 +61,8 @@ func _process(delta):
 		if (spell_index > 0):
 			Sfx.sfx_cursor();
 			spell_index -= 1;
-			#print("Spell: (",spell_index,"/"+max_spells+")");
+			PlayerStats.set_spell(spell_index);
+			print("Spell: (",spell_index,"/",max_spells,")");
 			self.frame = spell_index;
 		else:
 			Sfx.sfx_disabled();

@@ -32,6 +32,6 @@ anims/Explode = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3, -6 )
 texture = ExtResource( 3 )
-vframes = 3
 hframes = 4
+vframes = 3
 frame = 2

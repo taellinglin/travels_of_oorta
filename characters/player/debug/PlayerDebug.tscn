@@ -22,4 +22,3 @@ position = Vector2( 51.4563, -27.9334 )
 
 [node name="Camera2D" type="Camera2D" parent="Word/Player"]
 current = true
-

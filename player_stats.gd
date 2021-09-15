@@ -8,8 +8,8 @@ var player_hp = 500
 var player_mp = 100
 var max_hp = 500
 var max_mp = 500
-var max_exp = 100
-var player_exp = 0
+var max_xp = 100
+var player_xp = 0
 var player_spell = 0
 var player_level = 1
 var max_level = 25
@@ -65,22 +65,22 @@ func get_max_mp():
 	print("Player Max MP: ", max_mp)
 	return max_mp
 
-func set_exp(set_exp):
-	if set_exp < max_exp && set_exp >= 0:
-		player_exp = set_exp
-		print("Player Exp set to: ", player_exp)
+func set_xp(set_xp):
+	if set_xp < max_xp && set_xp >= 0:
+		player_xp = set_xp
+		print("Player xp set to: ", player_xp)
 		
-func get_exp():
-	print("Player Exp: ", player_exp)
-	return player_exp
+func get_xp():
+	print("Player xp: ", player_xp)
+	return player_xp
 	
-func set_max_exp(set_max_exp):
-	max_exp = set_max_exp
-	print("Player Max Exp set to: ", max_exp)
+func set_max_xp(set_max_xp):
+	max_xp = set_max_xp
+	print("Player Max xp set to: ", max_xp)
 	
-func get_max_exp():
-	print("Player Max Exp: ", max_exp)
-	return max_exp
+func get_max_xp():
+	print("Player Max xp: ", max_xp)
+	return max_xp
 	
 func set_spell(set_spell):
 	player_spell = set_spell

@@ -1,9 +1,9 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
 [ext_resource path="res://engine/Momentum.gd" type="Script" id=3]
-[ext_resource path="res://characters/commons/Health.gd" type="Script" id=4]
+[ext_resource path="res://characters/commons/Magic.gd" type="Script" id=4]
 [ext_resource path="res://characters/player/sprites/adventurer-v1.5-Sheet.png" type="Texture" id=5]
 [ext_resource path="res://characters/player/gui/CooldownBar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://characters/player/states/motion/on-ground/idle.gd" type="Script" id=7]
@@ -28,6 +28,8 @@
 [ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=26]
 [ext_resource path="res://characters/player/states/interactions/wait-for-alert-box.gd" type="Script" id=27]
 [ext_resource path="res://sound/menus/spin_down.wav" type="AudioStream" id=28]
+[ext_resource path="res://characters/commons/Health.gd" type="Script" id=29]
+[ext_resource path="res://characters/player/Exp.gd" type="Script" id=30]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AttackAirHeavy"
@@ -471,7 +473,13 @@ script = ExtResource( 3 )
 DURATION = 0.3
 
 [node name="Health" type="Node2D" parent="."]
+script = ExtResource( 29 )
+
+[node name="Magic" type="Node2D" parent="."]
 script = ExtResource( 4 )
+
+[node name="Xp" type="Node2D" parent="."]
+script = ExtResource( 30 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 5 )

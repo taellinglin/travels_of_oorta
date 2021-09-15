@@ -1,7 +1,8 @@
 extends Node
 
 var current_scene = null
-
+var paused = false
+var game_over = false
 
 func _ready():
 	var root = get_tree().get_root()
@@ -35,3 +36,15 @@ func _deferred_goto_scene(path):
 
 	# Optionally, to make it compatible with the SceneTree.change_scene() API.
 	get_tree().set_current_scene(current_scene)
+
+func get_paused():
+	return paused
+
+func set_paused(p):
+	paused =  p
+
+func get_game_over():
+	return game_over
+	
+func set_game_over(g_o):
+	game_over = g_o

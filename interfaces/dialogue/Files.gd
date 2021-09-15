@@ -10,9 +10,9 @@ var menu = ["file1","file2", 'file3']
 
 
 func _ready() -> void:
-	$PanelContainer1.connect('pressed', self, '_on_File1_button_pressed')
-	$PanelContainer2.connect('pressed', self, '_on_File2_button_pressed')
-	$PanelContainer3.connect('pressed', self, '_on_File2_button_pressed')
+	#$PanelContainer1.connect('pressed', self, '_on_File1_button_pressed')
+	#$PanelContainer2.connect('pressed', self, '_on_File2_button_pressed')
+	#$PanelContainer3.connect('pressed', self, '_on_File2_button_pressed')
 	menu = ["file1", "file2", "file3"];
 	Sfx.menumode = true;
 	Sfx.maxitems = 2;

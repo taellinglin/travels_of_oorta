@@ -1,10 +1,10 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://managers/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://menus/GameOver.tscn" type="PackedScene" id=2]
 [ext_resource path="res://menus/Pause.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tools/draw-bounds.gd" type="Script" id=4]
-[ext_resource path="res://music/bgm10_-_Autumn_Puzzle.ogg" type="AudioStream" id=5]
+[ext_resource path="res://music/bgm30_-_Maze.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Backdrop/bg_fg.png" type="Texture" id=6]
 [ext_resource path="res://environment/tilemaps/TilemapBackground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://environment/tilemaps/TilemapBridge.tscn" type="PackedScene" id=8]
@@ -27,6 +27,8 @@
 [ext_resource path="res://scenes/Level_0_Dialog.gd" type="Script" id=25]
 [ext_resource path="res://graphics/sprites/NPC/frog2.png" type="Texture" id=26]
 [ext_resource path="res://portraits/new_spriteframes.tres" type="SpriteFrames" id=27]
+[ext_resource path="res://font/Daemon.tres" type="DynamicFont" id=28]
+[ext_resource path="res://interfaces/tooltip/Tooltip.gd" type="Script" id=29]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 23 )
@@ -50,13 +52,29 @@ shader = ExtResource( 22 )
 shader_param/scroll_speed = 0.05
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 16, 16 )
+extents = Vector2( 29.4926, 26.5953 )
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Animation" id=8]
+resource_name = "frog_idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1 ]
+}
+
+[sub_resource type="Curve" id=9]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
-curve = SubResource( 8 )
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( 930.242, 636.341 )
@@ -72,15 +90,19 @@ visible = false
 visible = false
 
 [node name="Dialog" type="Control" parent="Interfaces"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -0.765839
+margin_top = 81.9435
+margin_right = 237.234
+margin_bottom = 159.943
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NinePatchRect" parent="Interfaces/Dialog" instance=ExtResource( 24 )]
-language = "res://dialog/dialog_0.lan"
+margin_left = 0.765839
+margin_top = -79.9435
+margin_right = 2.76584
+margin_bottom = -93.9435
 face_sprites = ExtResource( 27 )
 
 [node name="Bounds" type="Node2D" parent="."]
@@ -253,7 +275,7 @@ position = Vector2( 1966.03, -535.365 )
 script = ExtResource( 18 )
 
 [node name="Frog" type="Sprite" parent="World/Props"]
-position = Vector2( 375.47, -616.54 )
+position = Vector2( -569.227, -407.838 )
 z_index = -1
 texture = ExtResource( 26 )
 offset = Vector2( 9.05804, -8.54312 )
@@ -271,6 +293,10 @@ shape = SubResource( 7 )
 
 [node name="AlertBoxPosition" type="Position2D" parent="World/Props/Frog"]
 position = Vector2( -6.3971, -49.5264 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Props/Frog"]
+autoplay = "frog_idle"
+anims/frog_idle = SubResource( 8 )
 
 [node name="Enemies" type="Node2D" parent="World"]
 
@@ -319,11 +345,32 @@ margin_top = 6.5
 margin_right = 146.0
 margin_bottom = 38.5
 
+[node name="Tooltip" type="Label" parent="World/Player/HUD"]
+margin_top = 60.9428
+margin_right = 240.0
+margin_bottom = 156.943
+grow_vertical = 0
+rect_min_size = Vector2( 0, 96 )
+custom_fonts/font = ExtResource( 28 )
+text = "tooltip"
+align = 1
+valign = 2
+autowrap = true
+script = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="World/Player/HUD/Tooltip"]
+
 [node name="Light2D" type="Light2D" parent="World/Player"]
 editor_only = true
-texture = SubResource( 9 )
+texture = SubResource( 10 )
 offset = Vector2( 0, 1 )
 energy = 6.75
 shadow_enabled = true
+
+[node name="Position2D" type="Position2D" parent="World"]
+position = Vector2( -674.111, -410.495 )
 
 [connection signal="finished" from="Interfaces/Dialog/NinePatchRect" to="World/Props/Frog" method="_on_NinePatchRect_finished"]

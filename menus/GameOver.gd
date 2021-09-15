@@ -5,6 +5,7 @@ Game over interface with some simples fade in animation.
 """
 extends Control
 
+export var game_over = false
 
 func _ready() -> void:
 	$GameOverAlert/retry.connect('pressed', self, '_on_Retry')
@@ -16,14 +17,18 @@ func _ready() -> void:
 
 func show() -> void:
 	$AnimationPlayer.play('Show')
-	Sfx.menumode = true;
-	Sfx.maxitems = 2;
-	
+	game_over = true
+	Sfx.menumode = true
+	Sfx.maxitems = 1
+
+
 
 func _on_Retry() -> void:
 	get_node("AudioStreamPlayer2").play()
 	LevelManager.goto_scene(LevelManager.get_scene_path())
+	game_over = false
 
 
 func _on_Quit() -> void:
 	LevelManager.goto_scene("res://menus/MainMenu.tscn")
+	game_over = false

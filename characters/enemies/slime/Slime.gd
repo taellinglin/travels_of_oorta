@@ -13,6 +13,9 @@ const TARGET_MIN_DISTANCE: float = 20.0
 const FOLLOW_RANGE: float = 100.0
 const ATTACK_RANGE: float = 30.0
 
+var xp_drop = 25
+var mp_drop = 25
+
 
 func _ready() -> void:
 	# signal
@@ -36,6 +39,7 @@ func _on_Getting_hit(alive: bool, direction: int) -> void:
 		_change_state('GettingHit')
 	else: 
 		_change_state('Death')
+		
 
 
 func _physics_process(delta: float) -> void:

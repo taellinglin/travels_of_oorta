@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://menus/Pause.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/theme/fonts/menu.dynamicfont.tres" type="DynamicFont" id=2]
@@ -8,12 +8,17 @@
 [ext_resource path="res://interfaces/theme/button/normal.stylebox.tres" type="StyleBox" id=6]
 [ext_resource path="res://interfaces/theme/fonts/alertbox.normal.tres" type="DynamicFont" id=7]
 [ext_resource path="res://interfaces/theme/fonts/dialog.dynamicfont.tres" type="DynamicFont" id=8]
+[ext_resource path="res://graphics/gui/file_select_cursor.png" type="Texture" id=9]
+[ext_resource path="res://menus/Cursor_Pause.gd" type="Script" id=10]
 
 [node name="Pause" type="Control"]
 pause_mode = 2
 margin_right = 479.0
 margin_bottom = 271.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Overlay" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -21,7 +26,7 @@ anchor_bottom = 1.0
 margin_top = -0.353546
 margin_right = 1.0
 margin_bottom = -0.353546
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0.501961 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -41,12 +46,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="Background"]
+margin_left = -4.65823
+margin_top = 48.437
+margin_right = 135.342
+margin_bottom = 48.437
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 2 )
+text = "Game Paused"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 3.0
-margin_right = -5.0
-margin_bottom = -5.0
+margin_left = 33.9306
+margin_top = 60.1647
+margin_right = -39.069
+margin_bottom = -3.83569
 grow_horizontal = 0
 custom_constants/separation = 16
 alignment = 1
@@ -54,20 +74,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Background/VBoxContainer"]
-margin_top = 23.0
-margin_right = 140.0
-margin_bottom = 39.0
-size_flags_vertical = 6
-custom_fonts/font = ExtResource( 2 )
-text = "Pause"
-align = 1
-valign = 1
-
 [node name="Resume" type="Button" parent="Background/VBoxContainer"]
-margin_top = 79.0
-margin_right = 140.0
-margin_bottom = 91.0
+margin_top = 10.0
+margin_right = 76.0
+margin_bottom = 22.0
+focus_neighbour_bottom = NodePath("../Quit")
 focus_next = NodePath("../QuitBtn")
 focus_previous = NodePath("../ResumeBtn")
 custom_styles/hover = ExtResource( 3 )
@@ -76,11 +87,13 @@ custom_styles/focus = ExtResource( 5 )
 custom_styles/normal = ExtResource( 6 )
 custom_fonts/font = ExtResource( 7 )
 text = "Resume"
+flat = true
+align = 0
 
 [node name="Quit" type="Button" parent="Background/VBoxContainer"]
-margin_top = 107.0
-margin_right = 140.0
-margin_bottom = 119.0
+margin_top = 38.0
+margin_right = 76.0
+margin_bottom = 50.0
 focus_next = NodePath("../ResumeBtn")
 focus_previous = NodePath("../RestartBtn")
 custom_styles/hover = ExtResource( 3 )
@@ -88,4 +101,13 @@ custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 5 )
 custom_styles/normal = ExtResource( 6 )
 custom_fonts/font = ExtResource( 8 )
+toggle_mode = true
+pressed = true
 text = "Quit"
+flat = true
+align = 0
+
+[node name="Cursor" type="Sprite" parent="Background/VBoxContainer"]
+position = Vector2( -17.614, 14.5507 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
