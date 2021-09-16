@@ -22,18 +22,6 @@ func _process(delta):
 	if linear_velocity.y < 0:
 		linear_velocity.y += 1
 	
-	#Perhaps some function to draw the orbs towards the player.
-		#homing_point = $World/Player.get_position_in_parent()
-		#print_debug("Homing Point: ", homing_point)
-		#applied_force(position
-		
-	
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 	

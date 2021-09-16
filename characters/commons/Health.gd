@@ -24,8 +24,12 @@ func _ready() -> void:
 	
 	#warning-ignore:return_value_discarded
 	self.connect('momentum', $'../Momentum', 'attack_momentum')
+	set_process(true)
 
-
+func _process(delta):
+	health =  PlayerStats.get_hp()
+	max_health = PlayerStats.get_max_hp()
+	
 """
 Temporary function to simulate hit/recover health
 @TODO: To remove

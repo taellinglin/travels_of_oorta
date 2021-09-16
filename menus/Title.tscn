@@ -137,8 +137,9 @@ __meta__ = {
 
 [node name="Logo" type="Sprite" parent="."]
 material = SubResource( 4 )
-position = Vector2( 128, 64 )
+position = Vector2( 128, 64.4689 )
 texture = SubResource( 6 )
+offset = Vector2( 0, -120 )
 script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
