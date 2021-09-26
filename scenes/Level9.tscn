@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://managers/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://menus/GameOver.tscn" type="PackedScene" id=2]
@@ -16,19 +16,21 @@
 [ext_resource path="res://characters/enemies/slime/Slime.tscn" type="PackedScene" id=14]
 [ext_resource path="res://characters/enemies/eagle/Eagle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=16]
-[ext_resource path="res://characters/player/gui/PlayerLifeBar.tscn" type="PackedScene" id=17]
 [ext_resource path="res://shaders/scroll.shader" type="Shader" id=18]
 [ext_resource path="res://backgrounds/summer_background.bmp" type="Texture" id=19]
 [ext_resource path="res://graphics/sprites/NPC/frog2.png" type="Texture" id=21]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 6 )
+shader_param/scroll_speed = null
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 6 )
+shader_param/scroll_speed = null
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 6 )
+shader_param/scroll_speed = null
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 18 )
@@ -280,5 +282,3 @@ limit_right = 1750
 limit_bottom = 270
 
 [node name="HUD" type="CanvasLayer" parent="World/Player"]
-
-[node name="PlayerLifeBar" parent="World/Player/HUD" instance=ExtResource( 17 )]

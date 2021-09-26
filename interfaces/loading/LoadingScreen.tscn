@@ -8,7 +8,8 @@
 [ext_resource path="res://graphics/backgrounds/title_bg.png" type="Texture" id=6]
 [ext_resource path="res://graphics/backgrounds/bg_fg.png" type="Texture" id=7]
 [ext_resource path="res://graphics/backgrounds/trees2.png" type="Texture" id=8]
-[ext_resource path="res://shaders/scroll.shader" type="Shader" id=9]
+[ext_resource path="res://scroll.shader" type="Shader" id=9]
+
 
 [sub_resource type="Animation" id=4]
 resource_name = "Blink"

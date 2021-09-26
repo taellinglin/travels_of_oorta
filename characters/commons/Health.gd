@@ -2,7 +2,6 @@
 Manage health of the character.
 """
 extends Node2D
-class_name Health
 
 # signal emitted when the health change
 signal health_changed(new_health)
@@ -13,23 +12,19 @@ signal take_damage(alive, direction)
 # signal emitted to "slow" the time when the character is hitted
 signal momentum()
 
-var health
-var max_health
+export(float) var max_health: float = 100.0
+var health: float = 0.0
+
 
 func _ready() -> void:
-	health =  PlayerStats.get_hp()
-	max_health = PlayerStats.get_max_hp()
+	health = max_health
 	emit_signal('max_health_changed', max_health)
 	emit_signal('health_changed', health)
 	
 	#warning-ignore:return_value_discarded
 	self.connect('momentum', $'../Momentum', 'attack_momentum')
-	set_process(true)
 
-func _process(delta):
-	health =  PlayerStats.get_hp()
-	max_health = PlayerStats.get_max_hp()
-	
+
 """
 Temporary function to simulate hit/recover health
 @TODO: To remove
@@ -43,7 +38,6 @@ func _input(event: InputEvent) -> void:
 
 """
 Damage the character.
-
 @param {float} amount - amount of health to remove
 @param {int} direction - computed direction where the character has been hit
 """
@@ -58,12 +52,11 @@ func take_damage(amount: float, direction: int) -> void:
 	emit_signal('health_changed', health)
 	emit_signal('take_damage', is_alive, direction)
 	emit_signal('momentum')
-	print('%s took %s damage. Hp : %s/%s' % [get_path(), amount, health, max_health])
+	print('%s took %s damage. Health: %s/%s' % [get_path(), amount, health, max_health])
 
 
 """
 Health the character.
-
 @param {float} amount - amount of health to add
 """
 func recover_health(amount: float) -> void:
@@ -71,5 +64,4 @@ func recover_health(amount: float) -> void:
 	if health > max_health:
 		health = max_health
 	emit_signal('health_changed', health)
-	
-	print('%s recovered %s hit points. Hp: %s/%s' % [get_path(), amount, health, max_health])
+	print('%s recovered %s health. Health: %s/%s' % [get_path(), amount, health, max_health])

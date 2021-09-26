@@ -16,7 +16,7 @@
 [ext_resource path="res://characters/enemies/slime/Slime.tscn" type="PackedScene" id=14]
 [ext_resource path="res://characters/enemies/eagle/Eagle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=16]
-[ext_resource path="res://characters/player/gui/PlayerLifeBar.tscn" type="PackedScene" id=17]
+[ext_resource path="res://characters/player/Camera.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Backdrop/bg_fg.png" type="Texture" id=18]
 [ext_resource path="res://Backdrop/title_bg.png" type="Texture" id=19]
 [ext_resource path="res://Backdrop/trees.png" type="Texture" id=20]
@@ -275,16 +275,6 @@ position = Vector2( 589.758, -541.841 )
 patrol_distance = 150.0
 
 [node name="Player" parent="World" instance=ExtResource( 16 )]
-position = Vector2( -788.837, -417.678 )
+position = Vector2( -772.215, -426.46 )
 
-[node name="Camera" type="Camera2D" parent="World/Player"]
-current = true
-zoom = Vector2( 0.9, 0.9 )
-limit_left = 0
-limit_top = 30
-limit_right = 1750
-limit_bottom = 270
-
-[node name="HUD" type="CanvasLayer" parent="World/Player"]
-
-[node name="PlayerLifeBar" parent="World/Player/HUD" instance=ExtResource( 17 )]
+[node name="Camera" parent="World/Player" instance=ExtResource( 17 )]

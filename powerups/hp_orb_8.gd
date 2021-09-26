@@ -11,7 +11,7 @@ var homing_point
 func _ready():
 	#scale = Vector2(orb_scale_init, orb_scale_init)
 	get_node("AnimationPlayer").play("Grow")
-	set_process(true);
+	set_physics_process(true);
 	var rand_y_lv = rand_range(-100, 0)
 	linear_velocity.y = rand_y_lv
 	var rand_x_lv = rand_range(-50,50)
@@ -19,9 +19,10 @@ func _ready():
 	linear_velocity.x = rand_x_lv
 	
 	
-func _process(delta):
+func _physics_process(delta):
 	if linear_velocity.y < 0:
-		linear_velocity.y += 1
+		linear_velocity.y += 1 * delta
+	angular_velocity = 0
 	
 	#Perhaps some function to draw the orbs towards the player.
 		#homing_point = $World/Player.get_position_in_parent()
@@ -44,7 +45,7 @@ func _on_Area2D_body_entered(body):
 	if(body.name == "Player"):
 		if !picked_up:
 			print("Player is picking up HP...")
-			PlayerStats.set_hp(PlayerStats.get_hp() + 5)
+			PlayerStats.set_hp(PlayerStats.get_hp() + 50)
 			get_node("pickup_sound").play()
 			get_node("AnimationPlayer").play("Shrink")
 			picked_up = true

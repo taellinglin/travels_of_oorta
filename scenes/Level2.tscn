@@ -16,7 +16,7 @@
 [ext_resource path="res://characters/enemies/slime/Slime.tscn" type="PackedScene" id=14]
 [ext_resource path="res://characters/enemies/eagle/Eagle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=16]
-[ext_resource path="res://characters/player/gui/PlayerLifeBar.tscn" type="PackedScene" id=17]
+[ext_resource path="res://characters/player/Camera.tscn" type="PackedScene" id=17]
 [ext_resource path="res://characters/commons/Health.gd" type="Script" id=18]
 [ext_resource path="res://engine/Momentum.gd" type="Script" id=19]
 [ext_resource path="res://characters/commons/states/motion/combat/getting-hit.gd" type="Script" id=20]
@@ -218,7 +218,7 @@ color = Color( 0.756863, 0.376471, 0.85098, 1 )
 value = null
 
 [node name="Min" type="Position2D" parent="Bounds"]
-position = Vector2( -929.242, -38.5389 )
+position = Vector2( -1158.83, -24.4453 )
 
 [node name="Max" type="Position2D" parent="Bounds"]
 position = Vector2( 357.758, -62.4871 )
@@ -410,23 +410,13 @@ patrol_distance = 100.0
 position = Vector2( -138.308, -496.25 )
 
 [node name="Player" parent="World" instance=ExtResource( 16 )]
-position = Vector2( -824.203, -421.025 )
+position = Vector2( -827.117, -423.027 )
 
-[node name="Camera" type="Camera2D" parent="World/Player"]
-current = true
-zoom = Vector2( 0.9, 0.9 )
-limit_left = 0
-limit_top = 30
-limit_right = 1750
-limit_bottom = 270
-
-[node name="HUD" type="CanvasLayer" parent="World/Player"]
-
-[node name="PlayerLifeBar" parent="World/Player/HUD" instance=ExtResource( 17 )]
-margin_left = 18.0
-margin_top = 7.0
-margin_right = 146.0
-margin_bottom = 39.0
+[node name="Camera" parent="World/Player" instance=ExtResource( 17 )]
+position = Vector2( -98.6132, -72.9743 )
+anchor_mode = 0
+limit_left = -41
+limit_top = -6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"

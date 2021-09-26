@@ -20,7 +20,8 @@ func _ready():
 	
 func _process(delta):
 	if linear_velocity.y < 0:
-		linear_velocity.y += 1
+		linear_velocity.y += 1 * delta
+	angular_velocity = 0
 	
 	#Perhaps some function to draw the orbs towards the player.
 		#homing_point = $World/Player.get_position_in_parent()
@@ -43,7 +44,7 @@ func _on_Area2D_body_entered(body):
 	if(body.name == "Player"):
 		if !picked_up:
 			print("Player is picking up HP...")
-			PlayerStats.set_hp(PlayerStats.get_hp() + 50)
+			PlayerStats.set_hp(PlayerStats.get_hp() + 500)
 			get_node("pickup_sound").play()
 			get_node("AnimationPlayer").play("Shrink")
 			picked_up = true

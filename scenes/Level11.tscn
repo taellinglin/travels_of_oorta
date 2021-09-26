@@ -16,19 +16,22 @@
 [ext_resource path="res://characters/enemies/slime/Slime.tscn" type="PackedScene" id=14]
 [ext_resource path="res://characters/enemies/eagle/Eagle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=16]
-[ext_resource path="res://characters/player/gui/PlayerLifeBar.tscn" type="PackedScene" id=17]
+[ext_resource path="res://characters/player/Camera.tscn" type="PackedScene" id=17]
 [ext_resource path="res://shaders/scroll.shader" type="Shader" id=18]
 [ext_resource path="res://backgrounds/summer_background.bmp" type="Texture" id=19]
 [ext_resource path="res://graphics/sprites/NPC/frog2.png" type="Texture" id=21]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 6 )
+shader_param/scroll_speed = null
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 6 )
+shader_param/scroll_speed = null
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 6 )
+shader_param/scroll_speed = null
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 18 )
@@ -74,6 +77,7 @@ position = Vector2( 1117.76, -193.231 )
 
 [node name="Music" type="AudioStreamPlayer" parent="Ambiance"]
 stream = ExtResource( 5 )
+volume_db = -8.619
 autoplay = true
 
 [node name="World" type="Node2D" parent="."]
@@ -285,16 +289,6 @@ position = Vector2( 341.758, -1364.34 )
 patrol_distance = 150.0
 
 [node name="Player" parent="World" instance=ExtResource( 16 )]
-position = Vector2( -802.242, -439.892 )
+position = Vector2( -804.564, -441.704 )
 
-[node name="Camera" type="Camera2D" parent="World/Player"]
-current = true
-zoom = Vector2( 0.9, 0.9 )
-limit_left = 0
-limit_top = 30
-limit_right = 1750
-limit_bottom = 270
-
-[node name="HUD" type="CanvasLayer" parent="World/Player"]
-
-[node name="PlayerLifeBar" parent="World/Player/HUD" instance=ExtResource( 17 )]
+[node name="Camera" parent="World/Player" instance=ExtResource( 17 )]

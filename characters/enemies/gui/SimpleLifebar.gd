@@ -4,7 +4,8 @@ extends TextureProgress
 export(Color) var COLOR setget set_color_normal
 
 func _ready() -> void:
-	get_parent().get_parent().get_node('Health').connect('health_changed', self, '_on_Health_changed')
+	#get_parent().get_parent().get_parent().get_node("EnemyHp").connect('hp_changed', self, '_on_Hp_changed')
+	pass
 
 
 func _on_Health_changed(health_value: float) -> void:

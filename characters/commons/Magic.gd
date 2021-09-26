@@ -2,12 +2,12 @@
 Manage magic of the character.
 """
 extends Node2D
-class_name Magic
+class_name Mp
 
 # signal emitted when the magic change
-signal magic_changed(new_magic)
+signal mp_changed(new_magic)
 # signal emitted when the max magic change
-signal max_magic_changed(new_magic)
+signal max_mp_changed(new_magic)
 # signal emitted when a character take damage
 signal take_damage(alive, direction)
 # signal emitted to "slow" the time when the character is hitted
@@ -19,8 +19,8 @@ var max_magic
 func _ready() -> void:
 	magic =  PlayerStats.get_mp()
 	max_magic = PlayerStats.get_max_mp()
-	emit_signal('max_magic_changed', max_magic)
-	emit_signal('magic_changed', magic)
+	emit_signal('max_mp_changed', max_magic)
+	emit_signal('mp_changed', magic)
 	
 	#warning-ignore:return_value_discarded
 	self.connect('momentum', $'../Momentum', 'attack_momentum')
@@ -46,14 +46,14 @@ func drain_magic(amount: float) -> void:
 	magic -= amount
 	if magic < 0:
 		magic = 0
-	emit_signal('magic_changed', magic)
+	emit_signal('mp_changed', magic)
 	
-	print('%s recovered %s hit points. Hp: %s/%s' % [get_path(), amount, magic, max_magic])
+	print('%s recovered %s magic points. Hp: %s/%s' % [get_path(), amount, magic, max_magic])
 
 func recover_magic(amount: float) -> void:
 	magic += amount
 	if magic > max_magic:
 		magic = max_magic
-	emit_signal('magic_changed', magic)
+	emit_signal('mp_changed', magic)
 	
-	print('%s recovered %s hit points. Hp: %s/%s' % [get_path(), amount, magic, max_magic])
+	print('%s recovered %s magic points. Mp: %s/%s' % [get_path(), amount, magic, max_magic])

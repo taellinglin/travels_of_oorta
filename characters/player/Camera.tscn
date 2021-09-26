@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="Camera" type="Camera2D"]
+position = Vector2( 18, 23.25 )
+current = true
+zoom = Vector2( 0.9, 0.9 )
+limit_left = 0
+limit_top = 30
+limit_right = 1750
+limit_bottom = 270
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 10.0

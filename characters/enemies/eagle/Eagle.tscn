@@ -2,7 +2,7 @@
 
 [ext_resource path="res://characters/enemies/eagle/Eagle.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
-[ext_resource path="res://characters/commons/Health.gd" type="Script" id=3]
+[ext_resource path="res://characters/enemies/eagle/EagleHp.gd" type="Script" id=3]
 [ext_resource path="res://engine/Momentum.gd" type="Script" id=4]
 [ext_resource path="res://characters/enemies/eagle/eagle-strip4.png" type="Texture" id=5]
 [ext_resource path="res://characters/commons/DamageZone.gd" type="Script" id=6]
@@ -88,7 +88,6 @@ GRAVITY = 0.0
 
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource( 3 )
-max_health = 5.0
 
 [node name="Momentum" type="Node2D" parent="."]
 script = ExtResource( 4 )
@@ -100,7 +99,6 @@ hframes = 4
 [node name="CooldownTimer" type="Timer" parent="."]
 
 [node name="DamageZone" type="Area2D" parent="."]
-editor/display_folded = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 6 )
@@ -111,13 +109,11 @@ KNOCKBACK_FORCE = Vector2( 100, 100 )
 shape = SubResource( 5 )
 
 [node name="States" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Patrol" type="Node2D" parent="States"]
 script = ExtResource( 7 )
 
 [node name="Death" type="Node2D" parent="States"]
-editor/display_folded = true
 script = ExtResource( 8 )
 
 [node name="Explosion" parent="States/Death" instance=ExtResource( 9 )]
@@ -128,7 +124,6 @@ position = Vector2( -4, 8 )
 script = ExtResource( 10 )
 
 [node name="GUI" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="SimpleLifebar" parent="GUI" instance=ExtResource( 11 )]
 margin_left = -14.4458
@@ -137,10 +132,8 @@ margin_right = 64.5542
 margin_bottom = -19.0474
 
 [node name="Debug" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Patrol" type="Node2D" parent="Debug"]
 script = ExtResource( 12 )
 color = Color( 0.701961, 0.811765, 0.156863, 1 )
 value = "patrol_distance"
-

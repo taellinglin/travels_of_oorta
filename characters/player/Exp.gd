@@ -8,10 +8,7 @@ class_name Xp
 signal xp_changed(new_xp)
 # signal emitted when the max xp change
 signal max_xp_changed(new_xp)
-# signal emitted when a character take damage
-signal take_damage(alive, direction)
-# signal emitted to "slow" the time when the character is hitted
-signal momentum()
+
 
 var xp
 var max_xp
@@ -22,8 +19,6 @@ func _ready() -> void:
 	emit_signal('max_xp_changed', max_xp)
 	emit_signal('xp_changed', xp)
 	
-	#warning-ignore:return_value_discarded
-	self.connect('momentum', $'../Momentum', 'attack_momentum')
 
 
 """

@@ -7,7 +7,7 @@
 [ext_resource path="res://font/Daemon Full Working (1).ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://graphics/backgrounds/trees2.png" type="Texture" id=6]
 [ext_resource path="res://interfaces/theme/button/alertBox.hover.stylebox.tres" type="StyleBox" id=7]
-[ext_resource path="res://shaders/scroll.shader" type="Shader" id=8]
+[ext_resource path="res://scroll.shader" type="Shader" id=8]
 [ext_resource path="res://audio/spin_up.wav" type="AudioStream" id=9]
 [ext_resource path="res://menus/CursorIcon_GO.gd" type="Script" id=10]
 [ext_resource path="res://graphics/gui/file_select_cursor.png" type="Texture" id=11]

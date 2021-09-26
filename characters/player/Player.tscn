@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -28,8 +28,11 @@
 [ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=26]
 [ext_resource path="res://characters/player/states/interactions/wait-for-alert-box.gd" type="Script" id=27]
 [ext_resource path="res://sound/menus/spin_down.wav" type="AudioStream" id=28]
-[ext_resource path="res://characters/commons/Health.gd" type="Script" id=29]
+[ext_resource path="res://characters/player/Hp.gd" type="Script" id=29]
 [ext_resource path="res://characters/player/Exp.gd" type="Script" id=30]
+[ext_resource path="res://interfaces/tooltip/Tooltip.gd" type="Script" id=31]
+[ext_resource path="res://characters/player/gui/PlayerLifeBar.tscn" type="PackedScene" id=32]
+[ext_resource path="res://font/Daemon.tres" type="DynamicFont" id=33]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AttackAirHeavy"
@@ -433,6 +436,7 @@ extents = Vector2( 15, 15.7378 )
 extents = Vector2( 19.0174, 18.6717 )
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 119, 91 )
 z_index = 2
 collision_layer = 2
 collision_mask = 3
@@ -472,10 +476,10 @@ script = ExtResource( 2 )
 script = ExtResource( 3 )
 DURATION = 0.3
 
-[node name="Health" type="Node2D" parent="."]
+[node name="Hp" type="Node2D" parent="."]
 script = ExtResource( 29 )
 
-[node name="Magic" type="Node2D" parent="."]
+[node name="Mp" type="Node2D" parent="."]
 script = ExtResource( 4 )
 
 [node name="Xp" type="Node2D" parent="."]
@@ -652,5 +656,31 @@ visible = false
 [node name="WaitForAlertBox" type="Node2D" parent="States"]
 position = Vector2( 0.25, 0.75 )
 script = ExtResource( 27 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="PlayerLifeBar" parent="HUD" instance=ExtResource( 32 )]
+margin_left = 26.0
+margin_top = 6.5
+margin_right = 154.0
+margin_bottom = 38.5
+
+[node name="Tooltip" type="Label" parent="HUD"]
+margin_top = 60.9428
+margin_right = 240.0
+margin_bottom = 156.943
+grow_vertical = 0
+rect_min_size = Vector2( 0, 96 )
+custom_fonts/font = ExtResource( 33 )
+text = "tooltip"
+align = 1
+valign = 2
+autowrap = true
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="HUD/Tooltip"]
 
 [connection signal="timeout" from="States/CombatIdle/CombatIdleTimer" to="States/CombatIdle" method="_on_CombatIdleTimer_timeout"]

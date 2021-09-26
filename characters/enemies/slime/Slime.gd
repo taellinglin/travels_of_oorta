@@ -9,7 +9,7 @@ onready var Physics2D: Node2D = $Physics2D
 var has_target: bool = false
 var target_position: Vector2 = Vector2()
 
-const TARGET_MIN_DISTANCE: float = 20.0
+const TARGET_MIN_DISTANCE: float = 10.0
 const FOLLOW_RANGE: float = 100.0
 const ATTACK_RANGE: float = 30.0
 

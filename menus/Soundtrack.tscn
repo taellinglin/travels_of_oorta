@@ -4,10 +4,11 @@
 [ext_resource path="res://graphics/gui/file_select_cursor.png" type="Texture" id=2]
 [ext_resource path="res://menus/cursor_soundtrack.gd" type="Script" id=3]
 [ext_resource path="res://menus/Soundtrack.gd" type="Script" id=4]
-[ext_resource path="res://shaders/scroll.shader" type="Shader" id=5]
+[ext_resource path="res://scroll.shader" type="Shader" id=5]
 [ext_resource path="res://graphics/backgrounds/title_bg.png" type="Texture" id=6]
 [ext_resource path="res://graphics/backgrounds/bg_fg.png" type="Texture" id=7]
 [ext_resource path="res://graphics/backgrounds/trees2.png" type="Texture" id=8]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
